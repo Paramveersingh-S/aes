@@ -61,7 +61,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-17T07:28:26Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "Intelligent Mixture-of-Models Router for Efficient Heterogeneous LLMs Inference",
     "isPinned": false
   },
   {
@@ -74,7 +74,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-17T07:26:40Z",
-    "excerpt": "<p align=\"center\">",
+    "excerpt": "GPT-2 is a decoder-only Transformer with specific architectural choices that diverge from standard post-norm models.",
     "isPinned": false
   },
   {
@@ -87,7 +87,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-16T15:22:32Z",
-    "excerpt": "<p align=\"center\">",
+    "excerpt": "Community maintained hardware plugin for vLLM on Ascend",
     "isPinned": false
   },
   {
@@ -100,7 +100,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-16T14:40:41Z",
-    "excerpt": "> Synced automatically from [NeetCode.io](https://neetcode.io) · Repository: `neetcode-submissions-s1rouzr3`",
+    "excerpt": "My NeetCode.io problem submissions",
     "isPinned": false
   },
   {
@@ -116,7 +116,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-14T05:00:22Z",
-    "excerpt": "<h1 align=\"center\">",
+    "excerpt": "Config files for my GitHub profile.",
     "isPinned": false
   },
   {
@@ -129,7 +129,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-14T04:57:27Z",
-    "excerpt": "![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen)",
+    "excerpt": "A Serverless Pastebin infrastructure deployed on AWS using Terraform. Designed to be fully scalable, highly observable, and strictly secure while leveraging the AWS Free Tier.",
     "isPinned": false
   },
   {
@@ -155,7 +155,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-14T04:50:14Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "GateKeeper is an API Gateway and intelligent rate limiter purpose-built for LLM traffic. It provides multi-algorithm token-aware rate limiting, multi-provider failover routing, semantic caching, and asynchronous cost tracking.",
     "isPinned": false
   },
   {
@@ -171,7 +171,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-13T06:03:08Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "RoPE (Rotary Position Embedding) Reproduction",
     "isPinned": false
   },
   {
@@ -184,7 +184,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-10T15:04:48Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "microGPT is a compact, high-performance autoregressive language model built from first principles. Unlike vanilla 2017 Transformer clones, microGPT implements the modern (2025/2026-era) architectural decisions found in state-of-the-art open-weight models like Llama 3, Mistral, and Gemma.",
     "isPinned": false
   },
   {
@@ -210,7 +210,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-10T03:26:23Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "fossunited.org",
     "isPinned": false
   },
   {
@@ -249,7 +249,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-07T11:23:36Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "Huddle: The Social Finance Tracker for Gen Z",
     "isPinned": false
   },
   {
@@ -262,7 +262,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-05T05:36:40Z",
-    "excerpt": "![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)",
+    "excerpt": "from-scratch PyTorch implementation of the seminal paper \"Attention Is All You Need\" (Vaswani et al., 2017).",
     "isPinned": false
   },
   {
@@ -275,7 +275,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-05T03:06:26Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "An open-source AI coding agent that lives in your terminal.",
     "isPinned": false
   },
   {
@@ -314,7 +314,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-04T10:51:17Z",
-    "excerpt": "<img src=\"https://raw.githubusercontent.com/scikit-hep/uproot5/main/docs-img/logo/logo.svg\" width=\"300px\">",
+    "excerpt": "ROOT I/O in pure Python and NumPy.",
     "isPinned": false
   },
   {
@@ -340,7 +340,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-01T05:36:11Z",
-    "excerpt": "<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->",
+    "excerpt": "Learned Iterative Optimization Networks",
     "isPinned": false
   },
   {
@@ -353,7 +353,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-07-01T01:15:41Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": ":zap: Dynamically generated stats for your github readmes",
     "isPinned": false
   },
   {
@@ -366,7 +366,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-30T13:01:29Z",
-    "excerpt": "<img src=\"https://root-forum.cern.ch/uploads/default/original/2X/3/3fb82b650635bc6d61461f3c47f41786afad4548.png\" align=\"right\"  height=\"50\"/>",
+    "excerpt": "The official repository for ROOT: analyzing, storing and visualizing big data, scientifically",
     "isPinned": false
   },
   {
@@ -405,7 +405,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-25T15:57:46Z",
-    "excerpt": "<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->",
+    "excerpt": "TIGRE: Tomographic Iterative GPU-based Reconstruction Toolbox",
     "isPinned": false
   },
   {
@@ -431,7 +431,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-24T04:23:48Z",
-    "excerpt": "![CI status](https://github.com/google-deepmind/optax/actions/workflows/tests.yml/badge.svg?branch=main)",
+    "excerpt": "Optax is a gradient processing and optimization library for JAX.",
     "isPinned": false
   },
   {
@@ -444,7 +444,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-23T14:34:40Z",
-    "excerpt": "<!-- begin-logo -->",
+    "excerpt": "Manipulate JSON-like data with NumPy-like idioms.",
     "isPinned": false
   },
   {
@@ -470,7 +470,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-23T13:31:10Z",
-    "excerpt": "<p align=\"center\">",
+    "excerpt": "🤗 The largest hub of ready-to-use datasets for AI models with fast, easy-to-use and efficient data manipulation tools",
     "isPinned": false
   },
   {
@@ -496,7 +496,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-23T12:00:24Z",
-    "excerpt": "<img alt=\"Vector logo\" width=\"50%\" src=\"https://raw.githubusercontent.com/scikit-hep/vector/main/docs/_images/LogoSrc.svg\"/>",
+    "excerpt": "Vector classes and utilities",
     "isPinned": false
   },
   {
@@ -561,7 +561,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-22T10:13:09Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "Welcome to the Pi Agent Improvement Suite! This repository provides enterprise-grade extensions, integrations, and core patches for the earendil-works/pi coding agent. It drastically enhances Pi's security, operational reliability, and ecosystem connectivity.",
     "isPinned": false
   },
   {
@@ -574,7 +574,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-21T10:53:36Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "LexRAG — Enterprise Legal Document Intelligence Platform",
     "isPinned": false
   },
   {
@@ -600,7 +600,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-20T12:52:49Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "This is an awesome project covering deep engineering and ML/Systems.",
     "isPinned": false
   },
   {
@@ -613,7 +613,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-20T11:24:02Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "This is an awesome project covering deep engineering and ML/Systems.",
     "isPinned": false
   },
   {
@@ -626,7 +626,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-19T17:10:16Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "⚡ TurboQuant Inference Engine Online · Data-Oblivious · Near-Optimal Vector Quantization for LLM Inference",
     "isPinned": false
   },
   {
@@ -639,7 +639,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-17T15:52:43Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "AgentScope PR Sentinel automates and supercharges code review using a fleet of specialized AI agents. It integrates directly with GitHub via webhooks, analyzes pull requests across multiple domains (Security, Performance, Quality, Testing, Documentation, Dependency), and posts synthesized findings directly to the PR while offering a comprehensive N",
     "isPinned": false
   },
   {
@@ -652,7 +652,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-15T18:41:27Z",
-    "excerpt": "<p align=\"center\">",
+    "excerpt": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
     "isPinned": false
   },
   {
@@ -665,7 +665,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-15T08:06:39Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "The Dynamic Real-Time Fraud Detection System is an end-to-end, production-ready machine learning platform designed to detect and block fraudulent financial transactions in under 50 milliseconds.",
     "isPinned": false
   },
   {
@@ -691,7 +691,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-14T13:48:42Z",
-    "excerpt": "<p align=\"center\">",
+    "excerpt": "LiteLlama is a high-performance, from-scratch Large Language Model inference engine tailored for the LLaMA-3 model family.",
     "isPinned": false
   },
   {
@@ -704,7 +704,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-13T21:23:43Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "A collection of agent skills for CAD, robotics and hardware design",
     "isPinned": false
   },
   {
@@ -717,7 +717,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-12T17:25:20Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "Sparse-Attention provides custom CUDA/Triton kernels that replace the standard  O ( N 2 )  dense attention mechanism with a structured block-sparse pattern. By combining heterogeneous attention constraints (local sliding windows, global stride landmarks, and prefix context), it enables Large Language Models to scale context lengths up to 1M tokens ",
     "isPinned": false
   },
   {
@@ -769,7 +769,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-09T09:05:00Z",
-    "excerpt": "![CI](https://github.com/Paramveersingh-S/cuda-insight/actions/workflows/test.yml/badge.svg)",
+    "excerpt": "CUDA Insight is an all-in-one educational toolkit and profiler designed to demystify GPU performance. Whether you're learning CUDA or optimizing a production kernel, CUDA Insight wraps NVIDIA's powerful toolchain into a simple, actionable workflow.",
     "isPinned": false
   },
   {
@@ -782,7 +782,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-09T07:58:55Z",
-    "excerpt": "![CUDA](https://img.shields.io/badge/CUDA-12.0+-green.svg)",
+    "excerpt": "A production-grade, highly-optimized Half-Precision General Matrix Multiplication (HGEMM) CUDA kernel built from scratch. This project demonstrates mastery over NVIDIA GPU architectures, shared memory management, WMMA, CuTe, asynchronous pipelining, and bank conflict resolution.",
     "isPinned": false
   },
   {
