@@ -111,6 +111,21 @@ const OSSContributions = () => {
           ))}
         </div>
       )}
+
+      {/* Snake Animation */}
+      <div className="mt-16 overflow-x-auto">
+        <h4 className="text-xl font-bold text-center mb-6 text-[var(--color-orange)]">Activity Heatmap</h4>
+        <div className="bg-[var(--color-off-white)] rounded-xl border border-[var(--color-border)] p-4 max-w-4xl mx-auto shadow-sm">
+          <img 
+            src="https://raw.githubusercontent.com/Paramveersingh-S/Paramveersingh-S/output/github-contribution-grid-snake.svg" 
+            alt="GitHub Contribution Snake" 
+            className="mx-auto w-full"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };
