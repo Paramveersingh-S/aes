@@ -22,3 +22,17 @@
   --font-body: 'Roboto', system-ui, sans-serif;
   --font-display: 'Spectral', Georgia, serif;
 }
+
+html.dark {
+  --color-white: #1a1a1a;
+  --color-black: #ffffff;
+  --color-off-white: #242424;
+  --color-dune: #f5f5f5;
+  --color-border: rgba(255,255,255,0.15);
+  
+  --bg-primary: #121212;
+  --bg-inverted: #f5f5f5;
+  --text-primary: #e0e0e0;
+  --text-inverted: #121212;
+  --color-orange-soft: #3a2212;
+}

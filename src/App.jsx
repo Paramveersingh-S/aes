@@ -1,9 +1,15 @@
 import React from 'react';
 import Home from './pages/Home';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 function App() {
   return (
-    <Home />
+    <ThemeProvider>
+      <LanguageProvider>
+        <Home />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 
