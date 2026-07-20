@@ -3,13 +3,25 @@ import ProjectCard from './ProjectCard';
 import ProjectFilterBar from './ProjectFilterBar';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const ALLOWED_REPOS = [
+  'Flash-Atten2-MMA', 
+  'Triton-MLOps', 
+  'Custom-HGEMM', 
+  'GateKeeper', 
+  'microgpt', 
+  'Semantic-search-RAG'
+];
+
 const ProjectGrid = () => {
   const [projects, setProjects] = useState([]);
   const [activeFilters, setActiveFilters] = useState([]);
 
   useEffect(() => {
     import('../../data/repos.json')
-      .then((data) => setProjects(data.default))
+      .then((data) => {
+        const filtered = data.default.filter(repo => ALLOWED_REPOS.includes(repo.name));
+        setProjects(filtered);
+      })
       .catch((err) => console.error("Failed to load repos.json", err));
   }, []);
 
