@@ -10,7 +10,7 @@ const AnimeScene = () => {
   return (
     <div className="absolute inset-0 overflow-hidden bg-[var(--color-black)] pointer-events-none -z-10">
       <motion.img
-        src="https://media.tenor.com/FwK962YwV98AAAAd/knight-resting-in-flowers.gif"
+        src="/hero_banner.gif"
         alt="Anime Scenery Background"
         className="w-full h-full object-cover"
         style={{ y: backgroundY, scale: 1.1 }}
