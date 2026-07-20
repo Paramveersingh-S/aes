@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+
+@theme {
+  --color-orange: var(--color-orange);
+  --color-orange-soft: var(--color-orange-soft);
+  --color-black: var(--color-black);
+  --color-dune: var(--color-dune);
+  --color-white: var(--color-white);
+  --color-off-white: var(--color-off-white);
+  --color-border: var(--color-border);
+
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
