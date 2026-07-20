@@ -9,7 +9,7 @@
     "stargazers_count": 1,
     "forks_count": 1,
     "pushed_at": "2025-07-04T08:27:06Z",
-    "excerpt": "A smart system that detects hazardous gases (LPG, CO, smoke) using an MQ-2 sensor, displays real-time data on an LCD, logs to an SD card, and sends alerts via Wi-Fi. Built with Arduino Uno, ESP8266 No...",
+    "excerpt": "",
     "isPinned": true
   },
   {
@@ -17,12 +17,12 @@
     "description": null,
     "html_url": "https://github.com/Paramveersingh-S/aes",
     "homepage": null,
-    "language": null,
+    "language": "JavaScript",
     "topics": [],
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-07-20T15:00:01Z",
-    "excerpt": "",
+    "pushed_at": "2026-07-20T16:01:33Z",
+    "excerpt": "This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.",
     "isPinned": false
   },
   {
@@ -470,7 +470,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-23T13:31:10Z",
-    "excerpt": "<p align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -483,7 +483,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-23T12:30:23Z",
-    "excerpt": "CAiMIRA is a risk assessment tool developed to model the concentration of viruses in enclosed spaces, in order to inform space-management decisions.",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -496,7 +496,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-23T12:00:24Z",
-    "excerpt": "<img alt=\"Vector logo\" width=\"50%\" src=\"https://raw.githubusercontent.com/scikit-hep/vector/main/docs/_images/LogoSrc.svg\"/>",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -509,7 +509,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-23T10:19:08Z",
-    "excerpt": "[Gemma](https://ai.google.dev/gemma) is a family of open-weights Large Language",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -522,7 +522,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-23T08:09:21Z",
-    "excerpt": "TORAX is a differentiable tokamak core transport simulator aimed for fast",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -535,7 +535,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-22T22:54:16Z",
-    "excerpt": ".. image:: https://raw.githubusercontent.com/scikit-hep/pyhf/main/docs/_static/img/pyhf-logo.svg",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -548,7 +548,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-22T14:04:20Z",
-    "excerpt": "\"Every line of code, traced back to the paper that inspired it.\"",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -561,7 +561,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-22T10:13:09Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -574,7 +574,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-21T10:53:36Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -587,7 +587,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-21T03:20:24Z",
-    "excerpt": "This repository contains a specialized submission for the [openai/parameter-golf](https://github.com/openai/parameter-golf) challenge, targeting the `track_non_record_16mb` track.",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -600,7 +600,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-20T12:52:49Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -613,7 +613,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-20T11:24:02Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -626,7 +626,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-19T17:10:16Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -639,7 +639,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-17T15:52:43Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -652,7 +652,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-15T18:41:27Z",
-    "excerpt": "<p align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -665,7 +665,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-15T08:06:39Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -678,7 +678,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-14T20:32:14Z",
-    "excerpt": "A community-maintained collection of syllabus-aligned resources and practice",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -691,7 +691,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-14T13:48:42Z",
-    "excerpt": "<p align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -704,7 +704,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-13T21:23:43Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -717,7 +717,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-12T17:25:20Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -730,7 +730,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-10T05:51:56Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -743,7 +743,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-10T05:02:55Z",
-    "excerpt": "| **`Documentation`** | **`Nightly Wheels`** |",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -769,7 +769,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-09T09:05:00Z",
-    "excerpt": "![CI](https://github.com/Paramveersingh-S/cuda-insight/actions/workflows/test.yml/badge.svg)",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -782,7 +782,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-09T07:58:55Z",
-    "excerpt": "![CUDA](https://img.shields.io/badge/CUDA-12.0+-green.svg)",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -795,7 +795,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-08T14:06:53Z",
-    "excerpt": "**The Open-Source ML Experiment Tracker Powered by PostgreSQL**",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -821,7 +821,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-07T10:09:18Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -847,7 +847,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-06T15:55:01Z",
-    "excerpt": "<p align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -873,7 +873,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-06T08:25:27Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -899,7 +899,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-06-03T04:48:00Z",
-    "excerpt": "<div align=\"center\">",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -925,7 +925,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-05-30T05:32:08Z",
-    "excerpt": "<p align=\"center\">\r",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -990,7 +990,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-05-10T11:16:03Z",
-    "excerpt": "This repository contains a complete, edge-optimized Machine Learning pipeline designed to detect Denial of Service (DoS) and Fuzzy payload injection attacks on vehicle Controller Area Networks (CAN) i...",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1003,7 +1003,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-05-04T20:07:19Z",
-    "excerpt": "<img width=\"3840\" height=\"1280\" alt=\"1920x640-discord\" src=\"https://github.com/user-attachments/assets/90607b26-171f-476a-90ae-69b9dbb7cb30\" />",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1016,7 +1016,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-04-21T02:04:10Z",
-    "excerpt": "<!-- @format -->",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1029,7 +1029,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-04-09T14:43:39Z",
-    "excerpt": "title: Data Privacy Environment",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1042,7 +1042,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-03-30T14:24:06Z",
-    "excerpt": "An opinionated curated list of awesome open source frameworks, libraries and software developed by CERN for the world.",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1055,7 +1055,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-03-08T21:51:59Z",
-    "excerpt": "[https://discord.gg/gpumode](https://discord.gg/gpumode)",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1068,7 +1068,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-02-19T17:20:53Z",
-    "excerpt": "An AI-powered platform that connects skilled workers with job opportunities based on skills (not resumes), supports informal workers, and enables peer-to-peer skill sharing.",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1081,7 +1081,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2026-02-18T15:25:14Z",
-    "excerpt": "**Status:** ✅ Phase 1 MVP Complete | **Version:** 1.0.0 | **Date:** February 16, 2026",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1133,7 +1133,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2025-10-06T15:23:43Z",
-    "excerpt": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1198,7 +1198,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2025-07-14T12:39:20Z",
-    "excerpt": "This repo is for my personal use. In it i will keep the solutions for daily leetcode problems.",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1211,7 +1211,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2025-07-10T15:50:09Z",
-    "excerpt": "![ChatGPT Image Jul 5, 2025 at 06_07_31 PM](https://github.com/user-attachments/assets/2660f828-49c7-444d-beca-d8b01854667a)",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1224,7 +1224,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2025-07-06T16:56:24Z",
-    "excerpt": "This repository is home to materials for the  [GitHub Archive Program](https://archiveprogram.github.com/).",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1237,7 +1237,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2025-07-04T10:16:52Z",
-    "excerpt": "A CUDA-accelerated simulator for modeling ion implantation processes in semiconductor materials. Designed for doping optimization and defect analysis, this tool leverages parallel computing to predict...",
+    "excerpt": "",
     "isPinned": false
   },
   {
@@ -1250,7 +1250,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "pushed_at": "2025-07-04T08:30:50Z",
-    "excerpt": "This website is under development now.",
+    "excerpt": "",
     "isPinned": false
   }
 ]
