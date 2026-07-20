@@ -18,7 +18,7 @@ const AnimeScene = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[var(--color-black)] pointer-events-none -z-10">
+    <div className="absolute inset-0 overflow-hidden bg-[var(--color-black)] pointer-events-none z-0">
       <motion.div style={{ y: backgroundY, scale: 1.1 }} className="w-full h-full">
         <video
           ref={videoRef}
