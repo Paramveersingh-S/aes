@@ -15,7 +15,7 @@ import Footer from '../components/layout/Footer';
 
 const Home = () => {
   return (
-    <div className="font-body text-[var(--text-primary)] bg-[var(--bg-primary)] min-h-screen">
+    <div className="font-body text-[var(--text-primary)] bg-[var(--bg-primary)] min-h-screen overflow-x-hidden w-full max-w-[100vw]">
       <Nav />
       
       {/* Hero Section */}
