@@ -24,6 +24,7 @@ const AnimeScene = () => {
           ref={videoRef}
           src="/torii-shrine-water-moewalls-com.mp4"
           className="w-full h-full object-cover"
+          style={{ objectPosition: 'center 25%' }}
           autoPlay
           loop
           muted
