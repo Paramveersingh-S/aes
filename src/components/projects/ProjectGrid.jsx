@@ -2,6 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectFilterBar from './ProjectFilterBar';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const ALLOWED_REPOS = [
   'Flash-Atten2-MMA', 
@@ -15,6 +16,7 @@ const ALLOWED_REPOS = [
 const ProjectGrid = () => {
   const [projects, setProjects] = useState([]);
   const [activeFilters, setActiveFilters] = useState([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     import('../../data/repos.json')
@@ -64,10 +66,10 @@ const ProjectGrid = () => {
     <div id="projects" className="mt-20">
       <div className="text-center mb-10">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-[var(--color-orange)] mb-4">
-          Projects & Repositories
+          {t('projects_title')}
         </h3>
         <p className="opacity-80 text-lg max-w-2xl mx-auto">
-          A selection of my open-source work, featured repositories, and personal projects.
+          {t('projects_desc')}
         </p>
       </div>
 

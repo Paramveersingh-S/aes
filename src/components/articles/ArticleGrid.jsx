@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ArticleCard from './ArticleCard';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const ArticleGrid = () => {
   const [articles, setArticles] = useState([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     import('../../data/articles.json')
@@ -15,7 +17,7 @@ const ArticleGrid = () => {
     <div id="articles" className="mt-20">
       <div className="flex flex-col items-center text-center mb-12">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-[var(--color-orange)] mb-4">
-          Latest Writings
+          {t('articles_title')}
         </h3>
         <p className="opacity-80 text-lg max-w-2xl mb-6">
           Essays and technical deep dives cross-posted from my Substack.

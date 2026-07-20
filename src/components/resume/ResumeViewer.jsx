@@ -1,11 +1,14 @@
 import React from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const ResumeViewer = () => {
+  const { t } = useLanguage();
+
   return (
     <div id="resume" className="mt-20">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-[var(--color-orange)]">
-          Resume
+          {t('nav_resume')}
         </h3>
         <div className="flex space-x-4 mt-4 md:mt-0">
           <a 
@@ -13,7 +16,7 @@ const ResumeViewer = () => {
             download
             className="bg-[var(--accent)] text-white px-5 py-2 rounded-md font-medium hover:bg-orange-600 transition-colors"
           >
-            Download PDF
+            {t('resume_download')}
           </a>
           <a 
             href="/resume/Paramveer_Singh_Resume.pdf" 

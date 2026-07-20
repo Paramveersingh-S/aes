@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const OSSContributions = () => {
   const [data, setData] = useState(null);
   const [expandedOrg, setExpandedOrg] = useState(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     import('../../data/oss-contributions.json')
@@ -17,9 +19,9 @@ const OSSContributions = () => {
     <div className="mt-20">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-[var(--color-orange)]">
-          Open Source Contributions
+          {t('oss_title')}
           <span className="ml-3 text-lg bg-[var(--color-orange-soft)] text-[var(--accent)] px-3 py-1 rounded-full font-sans">
-            {data.totalMergedPRs} Merged PRs
+            {data.totalMergedPRs} {t('oss_merged')}
           </span>
         </h3>
         <a 
@@ -114,7 +116,7 @@ const OSSContributions = () => {
 
       {/* Snake Animation */}
       <div className="mt-16 overflow-x-auto">
-        <h4 className="text-xl font-bold text-center mb-6 text-[var(--color-orange)]">Activity Heatmap</h4>
+        <h4 className="text-xl font-bold text-center mb-6 text-[var(--color-orange)]">{t('oss_heatmap')}</h4>
         <div className="bg-[var(--color-off-white)] rounded-xl border border-[var(--color-border)] p-4 max-w-4xl mx-auto shadow-sm">
           <img 
             src="https://raw.githubusercontent.com/Paramveersingh-S/Paramveersingh-S/output/github-contribution-grid-snake.svg" 

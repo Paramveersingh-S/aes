@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const HeroText = ({ about }) => {
+  const { t } = useLanguage();
+
   return (
     <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center px-4">
       <motion.h1
@@ -19,7 +22,7 @@ const HeroText = ({ about }) => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-lg md:text-xl text-[var(--text-inverted)] font-body max-w-2xl opacity-90"
       >
-        {about?.tagline || "Machine Learning | Embedded Software | Cyber Security | Kernel Programming"}
+        {t('hero_role')}
       </motion.p>
 
       <motion.div

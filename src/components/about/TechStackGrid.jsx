@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as SiIcons from 'react-icons/si';
 import * as DiIcons from 'react-icons/di';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const getIcon = (slug) => {
   // Try Simple Icons first, fallback to Devicons
@@ -18,6 +19,7 @@ const getIcon = (slug) => {
 
 const TechStackGrid = () => {
   const [techStack, setTechStack] = useState([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     import('../../data/techstack.json')
@@ -30,7 +32,7 @@ const TechStackGrid = () => {
   return (
     <div className="mt-20">
       <h3 className="text-2xl md:text-3xl font-display font-bold mb-8 text-[var(--color-orange)] text-center">
-        Tech Stack
+        {t('about_tech_stack')}
       </h3>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-6">
         {techStack.map((tech, idx) => {

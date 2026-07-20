@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { FiAward, FiBook, FiBriefcase } from 'react-icons/fi';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const AchievementsGrid = () => {
   const [about, setAbout] = useState(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     import('../../data/about.json')
@@ -15,14 +17,14 @@ const AchievementsGrid = () => {
   return (
     <div className="mt-20">
       <h3 className="text-2xl md:text-3xl font-display font-bold mb-8 text-[var(--color-orange)] text-center">
-        Achievements & Publications
+        {t('about_achievements')}
       </h3>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Competitions & Recognition */}
-        <div className="bg-white rounded-xl p-8 border border-[var(--color-border)] shadow-sm">
+        <div className="bg-[var(--bg-primary)] rounded-xl p-8 border border-[var(--color-border)] shadow-sm">
           <h4 className="text-xl font-bold mb-4 flex items-center">
-            <FiAward className="text-[var(--accent)] mr-2" /> Competitions & Recognition
+            <FiAward className="text-[var(--accent)] mr-2" /> {t('about_competitions')}
           </h4>
           <ul className="space-y-3">
             {about.achievements.map((item, idx) => (
@@ -34,9 +36,9 @@ const AchievementsGrid = () => {
         </div>
 
         {/* Research & Academia */}
-        <div className="bg-white rounded-xl p-8 border border-[var(--color-border)] shadow-sm">
+        <div className="bg-[var(--bg-primary)] rounded-xl p-8 border border-[var(--color-border)] shadow-sm">
           <h4 className="text-xl font-bold mb-4 flex items-center">
-            <FiBook className="text-[var(--accent)] mr-2" /> Research & Academia
+            <FiBook className="text-[var(--accent)] mr-2" /> {t('about_research')}
           </h4>
           <ul className="space-y-4 mb-6">
             {about.publications.map((item, idx) => (
@@ -47,7 +49,7 @@ const AchievementsGrid = () => {
           </ul>
           
           <h4 className="text-lg font-bold mb-3 flex items-center">
-            <FiBriefcase className="text-[var(--accent)] mr-2" /> Internships
+            <FiBriefcase className="text-[var(--accent)] mr-2" /> {t('about_internships')}
           </h4>
           <ul className="space-y-2">
             {about.internships.map((item, idx) => (

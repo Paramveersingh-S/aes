@@ -1,21 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const AboutMe = () => {
+  const { t } = useLanguage();
+
   return (
     <div id="about" className="grid grid-cols-1 md:grid-cols-2 gap-12">
       <div className="flex flex-col justify-center">
         <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 text-[var(--color-orange)]">
-          About Me
+          {t('about_title')}
         </h2>
         <p className="text-lg leading-relaxed mb-4 text-[var(--text-primary)]">
-          Hi, I'm Paramveer Singh. I'm a Machine Learning and Backend Engineer with a deep passion for building high-performance architectures. My expertise spans GPU-accelerated infrastructure, custom PyTorch and CUDA extensions, and stateful multi-agent systems.
+          {t('hero_greeting')} Paramveer Singh. {t('hero_role')} I have a deep passion for building high-performance architectures. My expertise spans GPU-accelerated infrastructure, custom PyTorch and CUDA extensions, and stateful multi-agent systems.
         </p>
         <p className="text-lg leading-relaxed mb-4 text-[var(--text-primary)]">
           I strive to bridge the gap between frontier AI research and highly scalable, production-grade engineering. Whether I'm implementing FlashAttention from scratch or engineering microservices for enterprise search, I love pushing hardware and software to their absolute limits.
         </p>
         <p className="text-lg leading-relaxed mb-4 font-semibold">
-          Currently focused on: <span className="text-[var(--accent)]">Scalable Full-Stack Architectures & Deep Tech Solutions</span>
+          {t('about_currently')} <span className="text-[var(--accent)]">Scalable Full-Stack Architectures & Deep Tech Solutions</span>
         </p>
         <ul className="space-y-2 mt-4 text-md">
           <li className="flex items-start">
@@ -38,11 +41,11 @@ const AboutMe = () => {
          <div className="w-full grid grid-cols-2 gap-4 text-center">
             <div className="bg-white p-4 rounded-lg border border-[var(--color-border)]">
               <p className="text-2xl font-bold text-[var(--accent)]">63+</p>
-              <p className="text-sm font-medium opacity-80">Public Repos</p>
+              <p className="text-sm font-medium opacity-80">{t('about_public_repos')}</p>
             </div>
             <div className="bg-white p-4 rounded-lg border border-[var(--color-border)]">
               <p className="text-2xl font-bold text-[var(--accent)]">50+</p>
-              <p className="text-sm font-medium opacity-80">Stars Received</p>
+              <p className="text-sm font-medium opacity-80">{t('about_stars')}</p>
             </div>
          </div>
       </div>
