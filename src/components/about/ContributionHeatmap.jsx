@@ -1,5 +1,5 @@
 import React from 'react';
-import GitHubCalendar from 'react-github-calendar';
+import { GitHubCalendar } from 'react-github-calendar';
 
 const ContributionHeatmap = () => {
   // Custom orange theme based on the plan

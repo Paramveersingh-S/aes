@@ -8,7 +8,7 @@ const getIcon = (slug) => {
   const formattedSlug = slug.charAt(0).toUpperCase() + slug.slice(1).toLowerCase();
   
   // Custom mapping for edge cases
-  if (slug === 'cplusplus') return SiIcons['SiCplusplus'] || DiIcons['DiCplusplus'];
+  if (slug === 'cplusplus') return SiIcons['SiCplusplus'];
   if (slug === 'espressif') return SiIcons['SiEspressif'] || SiIcons['SiArduino'];
   if (slug === 'googlecolab') return SiIcons['SiGooglecolab'];
   if (slug === 'googlecloud') return SiIcons['SiGooglecloud'];
