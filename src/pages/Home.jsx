@@ -19,9 +19,8 @@ const Home = () => {
       <Nav />
       
       {/* Hero Section */}
-      <section id="home" className="relative w-full h-screen">
+      <section id="home" className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden">
         <AnimeScene />
-        <HeroText />
       </section>
 
       {/* About Section */}
