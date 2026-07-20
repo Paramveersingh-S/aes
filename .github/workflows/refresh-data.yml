@@ -1,0 +1,26 @@
+name: Refresh Data
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours — keeps articles/projects/PRs current
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run refresh-data   # runs all scripts/*.mjs in sequence
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit updated data
+        run: |
+          git config user.name "data-bot"
+          git config user.email "actions@github.com"
+          git add src/data/*.json
+          git diff --cached --quiet || git commit -m "chore: refresh site data [automated]"
+          git push
