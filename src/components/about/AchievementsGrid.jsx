@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FiAward, FiBook, FiBriefcase } from 'react-icons/fi';
 
 const AchievementsGrid = () => {
   const [about, setAbout] = useState(null);
@@ -21,7 +22,7 @@ const AchievementsGrid = () => {
         {/* Competitions & Recognition */}
         <div className="bg-white rounded-xl p-8 border border-[var(--color-border)] shadow-sm">
           <h4 className="text-xl font-bold mb-4 flex items-center">
-            <span className="text-[var(--accent)] mr-2">🏆</span> Competitions & Recognition
+            <FiAward className="text-[var(--accent)] mr-2" /> Competitions & Recognition
           </h4>
           <ul className="space-y-3">
             {about.achievements.map((item, idx) => (
@@ -35,7 +36,7 @@ const AchievementsGrid = () => {
         {/* Research & Academia */}
         <div className="bg-white rounded-xl p-8 border border-[var(--color-border)] shadow-sm">
           <h4 className="text-xl font-bold mb-4 flex items-center">
-            <span className="text-[var(--accent)] mr-2">📚</span> Research & Academia
+            <FiBook className="text-[var(--accent)] mr-2" /> Research & Academia
           </h4>
           <ul className="space-y-4 mb-6">
             {about.publications.map((item, idx) => (
@@ -46,7 +47,7 @@ const AchievementsGrid = () => {
           </ul>
           
           <h4 className="text-lg font-bold mb-3 flex items-center">
-            <span className="text-[var(--accent)] mr-2">💼</span> Internships
+            <FiBriefcase className="text-[var(--accent)] mr-2" /> Internships
           </h4>
           <ul className="space-y-2">
             {about.internships.map((item, idx) => (

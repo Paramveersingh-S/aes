@@ -14,7 +14,7 @@ async function fetchProfile() {
 
   // Parsing Tech Stack Badges
   const techStack = [];
-  const regex = /logo=([^&]+)/g;
+  const regex = /logo=([^&"\s)\]]+)/g;
   let match;
   while ((match = regex.exec(markdown)) !== null) {
     const slug = match[1].toLowerCase();
@@ -36,15 +36,15 @@ async function fetchProfile() {
       "Open to collaboration and research paper analysis."
     ],
     achievements: [
-      "🌍 NASA Space Apps Challenge — Global Nominee & Regional Winner (out of 18,868+ teams)",
-      "💻 GirlScript Summer of Code (GSSoC) — Selected AI/ML & open-source contributor",
-      "🥇 IPD EXPO 2025 — 1st place among 30+ projects",
-      "🤖 AI Hack Matrix 2026 — Finalist (300+ teams)",
-      "🇮🇳 India Innovates — National Finalist (35,000+ entries)"
+      "NASA Space Apps Challenge — Global Nominee & Regional Winner (out of 18,868+ teams)",
+      "GirlScript Summer of Code (GSSoC) — Selected AI/ML & open-source contributor",
+      "IPD EXPO 2025 — 1st place among 30+ projects",
+      "AI Hack Matrix 2026 — Finalist (300+ teams)",
+      "India Innovates — National Finalist (35,000+ entries)"
     ],
     publications: [
-      "📘 IEEE-ICSPED Conference paper: 'CHRONOS: A Chaos-Harnessed TRNG for Neural Initialization and Secure Key Synthesis'",
-      "📙 Springer Journal (accepted): 'AI Driven Sanskrit Character Recognition and Translating to Text and Audio Formats: A Step Towards IKS Revival'"
+      "IEEE-ICSPED Conference paper: 'CHRONOS: A Chaos-Harnessed TRNG for Neural Initialization and Secure Key Synthesis'",
+      "Springer Journal (accepted): 'AI Driven Sanskrit Character Recognition and Translating to Text and Audio Formats: A Step Towards IKS Revival'"
     ],
     internships: [
       "Software Development Intern @ CSIR-CSIO",

@@ -1,17 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const AboutMe = () => {
-  const [about, setAbout] = useState(null);
-
-  useEffect(() => {
-    import('../../data/about.json')
-      .then((data) => setAbout(data.default))
-      .catch((err) => console.error("Failed to load about.json", err));
-  }, []);
-
-  if (!about) return <div className="h-40 flex items-center justify-center">Loading...</div>;
-
   return (
     <div id="about" className="grid grid-cols-1 md:grid-cols-2 gap-12">
       <div className="flex flex-col justify-center">
@@ -19,18 +9,23 @@ const AboutMe = () => {
           About Me
         </h2>
         <p className="text-lg leading-relaxed mb-4 text-[var(--text-primary)]">
-          {about.tagline}
+          Hi, I'm Paramveer Singh. I'm a Machine Learning and Backend Engineer with a deep passion for building high-performance architectures. My expertise spans GPU-accelerated infrastructure, custom PyTorch and CUDA extensions, and stateful multi-agent systems.
+        </p>
+        <p className="text-lg leading-relaxed mb-4 text-[var(--text-primary)]">
+          I strive to bridge the gap between frontier AI research and highly scalable, production-grade engineering. Whether I'm implementing FlashAttention from scratch or engineering microservices for enterprise search, I love pushing hardware and software to their absolute limits.
         </p>
         <p className="text-lg leading-relaxed mb-4 font-semibold">
-          Currently building: <span className="text-[var(--accent)]">{about.currentlyBuilding}</span>
+          Currently focused on: <span className="text-[var(--accent)]">Scalable Full-Stack Architectures & Deep Tech Solutions</span>
         </p>
         <ul className="space-y-2 mt-4 text-md">
-          {about.bullets.map((bullet, idx) => (
-            <li key={idx} className="flex items-start">
-              <span className="text-[var(--accent)] mr-2 mt-1">•</span>
-              <span className="opacity-90">{bullet}</span>
-            </li>
-          ))}
+          <li className="flex items-start">
+            <span className="text-[var(--accent)] mr-2 mt-1">•</span>
+            <span className="opacity-90">Interested in Machine Learning, Embedded Systems, Cyber Security, and Kernel Programming.</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-[var(--accent)] mr-2 mt-1">•</span>
+            <span className="opacity-90">Open to collaboration, open-source development, and research analysis.</span>
+          </li>
         </ul>
       </div>
 
@@ -38,7 +33,7 @@ const AboutMe = () => {
          <img 
             src="https://avatars.githubusercontent.com/u/155875516?v=4" 
             alt="Paramveer Singh" 
-            className="w-32 h-32 rounded-full mb-6 border-4 border-white shadow-md"
+            className="w-32 h-32 rounded-full mb-6 border-4 border-[var(--color-orange)] shadow-md object-cover"
          />
          <div className="w-full grid grid-cols-2 gap-4 text-center">
             <div className="bg-white p-4 rounded-lg border border-[var(--color-border)]">
