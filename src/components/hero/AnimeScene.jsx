@@ -4,16 +4,19 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const AnimeScene = () => {
   const { scrollY } = useScroll();
   
-  // Parallax effect for the background image
+  // Parallax effect for the background video
   const backgroundY = useTransform(scrollY, [0, 500], [0, 50]);
 
   return (
     <div className="absolute inset-0 overflow-hidden bg-[var(--color-black)] pointer-events-none -z-10">
-      <motion.img
-        src="/hero_banner.gif"
-        alt="Anime Scenery Background"
+      <motion.video
+        src="/torii-shrine-water-moewalls-com.mp4"
         className="w-full h-full object-cover"
         style={{ y: backgroundY, scale: 1.1 }}
+        autoPlay
+        loop
+        muted
+        playsInline
       />
       {/* Dark overlay to ensure text remains readable */}
       <div className="absolute inset-0 bg-black/40 mix-blend-multiply"></div>
