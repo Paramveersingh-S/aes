@@ -1,0 +1,144 @@
+{
+  "totalMergedPRs": 15,
+  "organizations": [
+    {
+      "org": "CERN",
+      "orgUrl": "https://github.com/CERN",
+      "avatarUrl": "https://github.com/CERN.png",
+      "pullRequests": [
+        {
+          "title": "Fix tessellation artifacts",
+          "repo": "CERN/OpenPHIGS",
+          "url": "https://github.com/CERN/OpenPHIGS/pull/36",
+          "mergedAt": "2026-06-29T16:15:37Z"
+        },
+        {
+          "title": "feat: integrate Doxygen for automated API man page generation (Fixes #5)",
+          "repo": "CERN/OpenPHIGS",
+          "url": "https://github.com/CERN/OpenPHIGS/pull/32",
+          "mergedAt": "2026-06-27T05:03:28Z"
+        },
+        {
+          "title": "fix: implement GLU tessellation for robust concave polygon filling across wsgl functions (Fixes #7)",
+          "repo": "CERN/OpenPHIGS",
+          "url": "https://github.com/CERN/OpenPHIGS/pull/31",
+          "mergedAt": "2026-06-28T14:13:38Z"
+        },
+        {
+          "title": "fix: resolve compiler enum conversion and missing prototype warnings in legacy C code (Fixes #8)",
+          "repo": "CERN/OpenPHIGS",
+          "url": "https://github.com/CERN/OpenPHIGS/pull/30",
+          "mergedAt": "2026-06-26T19:49:44Z"
+        },
+        {
+          "title": "fix: Resolve severe stripe artifacts in parallel beam projections by fixing intersection bypass bounds (Fixes #334)",
+          "repo": "CERN/TIGRE",
+          "url": "https://github.com/CERN/TIGRE/pull/752",
+          "mergedAt": "2026-06-25T19:09:11Z"
+        },
+        {
+          "title": "fix(python/geometry): Prevent cast_to_single from casting integers to float32 (#678)",
+          "repo": "CERN/TIGRE",
+          "url": "https://github.com/CERN/TIGRE/pull/750",
+          "mergedAt": "2026-06-23T14:57:19Z"
+        },
+        {
+          "title": "Fix geometry numpy2 single angle",
+          "repo": "CERN/TIGRE",
+          "url": "https://github.com/CERN/TIGRE/pull/749",
+          "mergedAt": "2026-06-23T12:55:15Z"
+        },
+        {
+          "title": "fix-denoise-2d-guard",
+          "repo": "CERN/TIGRE",
+          "url": "https://github.com/CERN/TIGRE/pull/748",
+          "mergedAt": "2026-06-23T12:55:37Z"
+        }
+      ]
+    },
+    {
+      "org": "CambridgeCIA",
+      "orgUrl": "https://github.com/CambridgeCIA",
+      "avatarUrl": "https://github.com/CambridgeCIA.png",
+      "pullRequests": [
+        {
+          "title": "Fix #166:  Fix loading error for models without geometry",
+          "repo": "CambridgeCIA/LION",
+          "url": "https://github.com/CambridgeCIA/LION/pull/190",
+          "mergedAt": "2026-07-01T12:40:17Z"
+        },
+        {
+          "title": "Fix #150: Add robust type checks in model initialization",
+          "repo": "CambridgeCIA/LION",
+          "url": "https://github.com/CambridgeCIA/LION/pull/188",
+          "mergedAt": "2026-07-01T12:36:33Z"
+        }
+      ]
+    },
+    {
+      "org": "supermemoryai",
+      "orgUrl": "https://github.com/supermemoryai",
+      "avatarUrl": "https://github.com/supermemoryai.png",
+      "pullRequests": [
+        {
+          "title": "docs(tools): correct addMemory default in OpenAI middleware JSDoc",
+          "repo": "supermemoryai/supermemory",
+          "url": "https://github.com/supermemoryai/supermemory/pull/1253",
+          "mergedAt": "2026-07-18T06:17:26Z"
+        }
+      ]
+    },
+    {
+      "org": "fossunited",
+      "orgUrl": "https://github.com/fossunited",
+      "avatarUrl": "https://github.com/fossunited.png",
+      "pullRequests": [
+        {
+          "title": "fix(dashboard): deduplicate session user profile API requests",
+          "repo": "fossunited/fossunited",
+          "url": "https://github.com/fossunited/fossunited/pull/1631",
+          "mergedAt": "2026-07-10T10:37:41Z"
+        }
+      ]
+    },
+    {
+      "org": "scikit-hep",
+      "orgUrl": "https://github.com/scikit-hep",
+      "avatarUrl": "https://github.com/scikit-hep.png",
+      "pullRequests": [
+        {
+          "title": "fix: avoid std::any in pyroot_to_buffer to support older ROOT versions",
+          "repo": "scikit-hep/uproot5",
+          "url": "https://github.com/scikit-hep/uproot5/pull/1667",
+          "mergedAt": "2026-07-02T14:50:17Z"
+        }
+      ]
+    },
+    {
+      "org": "hsf-training",
+      "orgUrl": "https://github.com/hsf-training",
+      "avatarUrl": "https://github.com/hsf-training.png",
+      "pullRequests": [
+        {
+          "title": "docs: Mention that root_numpy and root_pandas are deprecated",
+          "repo": "hsf-training/hsf-training-scikit-hep-webpage",
+          "url": "https://github.com/hsf-training/hsf-training-scikit-hep-webpage/pull/95",
+          "mergedAt": "2026-06-23T14:36:25Z"
+        }
+      ]
+    },
+    {
+      "org": "google-deepmind",
+      "orgUrl": "https://github.com/google-deepmind",
+      "avatarUrl": "https://github.com/google-deepmind.png",
+      "pullRequests": [
+        {
+          "title": "fix: support plotting initial conditions and empty datasets (Issue #1…",
+          "repo": "google-deepmind/torax",
+          "url": "https://github.com/google-deepmind/torax/pull/2242",
+          "mergedAt": "2026-07-15T10:47:53Z"
+        }
+      ]
+    }
+  ]
+}
