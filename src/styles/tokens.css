@@ -1,0 +1,24 @@
+@import '@fontsource/roboto';
+@import '@fontsource/spectral';
+
+:root {
+  /* Core Substack palette */
+  --color-orange: #FF6719;       /* primary accent, CTAs, links-on-dark, icons */
+  --color-orange-soft: #FFE4D2;  /* light tint for hover/backgrounds */
+  --color-black: #17140F;        /* true content black, deeper than Substack's Dune for our dark hero */
+  --color-dune: #2B2823;         /* Substack's own "black" — use for body text on white */
+  --color-white: #FFFFFF;
+  --color-off-white: #FAF9F7;    /* section background alternation */
+  --color-border: rgba(43,40,35,0.12);
+
+  /* Semantic */
+  --bg-primary: var(--color-white);
+  --bg-inverted: var(--color-black);
+  --text-primary: var(--color-dune);
+  --text-inverted: var(--color-white);
+  --accent: var(--color-orange);
+
+  /* Typography */
+  --font-body: 'Roboto', system-ui, sans-serif;
+  --font-display: 'Spectral', Georgia, serif;
+}
