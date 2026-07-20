@@ -13,7 +13,7 @@ const AboutMe = () => {
           <img 
             src="https://avatars.githubusercontent.com/u/155875516?v=4" 
             alt="Paramveer Singh" 
-            className="w-32 h-32 md:w-36 md:h-36 rounded-2xl mx-auto -mt-16 md:-mt-20 border-4 border-[var(--bg-primary)] shadow-md object-cover bg-[var(--bg-primary)]"
+            className="w-32 h-32 md:w-36 md:h-36 rounded-full mx-auto -mt-16 md:-mt-20 border-4 border-[var(--bg-primary)] shadow-md object-cover bg-[var(--bg-primary)]"
           />
           <h1 className="text-2xl md:text-3xl font-display font-bold mt-4">Paramveer Singh</h1>
           <p className="opacity-70 text-sm mt-1 mb-6">{t('hero_role')}</p>
