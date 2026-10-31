@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialLinks from '../about/SocialLinks';
+import BrandLogo from './BrandLogo';
 import { HiArrowUp } from 'react-icons/hi';
 
 const Footer = () => {
@@ -12,11 +13,9 @@ const Footer = () => {
       <div className="katana-divider absolute top-0 left-0 right-0" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
-        {/* Left: Identity */}
+        {/* Left: Custom Logo + Identity */}
         <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-lg bg-blue-500/15 border border-blue-400/40 text-blue-400 font-mono font-bold text-sm flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-            PS
-          </div>
+          <BrandLogo className="w-11 h-11" />
           <div>
             <p className="font-display text-white font-bold tracking-tight text-base">
               Paramveer Singh

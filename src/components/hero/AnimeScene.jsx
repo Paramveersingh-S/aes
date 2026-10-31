@@ -38,27 +38,16 @@ const AnimeScene = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#010308]/55 via-[#02050d]/25 to-[#010308]" />
       </motion.div>
 
-      {/* Centerpiece Hero Content */}
+      {/* Centerpiece Hero Content (Status pill removed so Torii Gate arch is clean) */}
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
         className="relative z-20 max-w-5xl mx-auto px-5 sm:px-8 text-center flex flex-col items-center"
       >
-        {/* Status Pill */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-6 px-4 py-1.5 rounded-full bg-[#020611]/80 backdrop-blur-md border border-blue-400/40 text-xs font-mono tracking-widest uppercase text-blue-200 flex items-center gap-2.5 shadow-[0_0_24px_rgba(59,130,246,0.3)]"
-        >
-          <span className="w-2 h-2 rounded-full bg-blue-400 animate-ping" />
-          <span>SYSTEMS • CLOUD • AI INFRASTRUCTURE</span>
-        </motion.div>
-
         {/* Main Display Name */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.12 }}
+          transition={{ duration: 0.65, delay: 0.1 }}
           className="font-display text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-[1.03] mb-4 drop-shadow-[0_6px_28px_rgba(0,0,0,0.85)]"
         >
           <span className="text-gradient-night">Paramveer Singh</span>
@@ -68,7 +57,7 @@ const AnimeScene = () => {
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="w-56 sm:w-80 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent mb-6 shadow-[0_0_16px_rgba(96,165,250,0.9)]"
         />
 
@@ -76,7 +65,7 @@ const AnimeScene = () => {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.28 }}
+          transition={{ duration: 0.6, delay: 0.26 }}
           className="text-lg sm:text-2xl font-medium text-white max-w-2xl mb-8 leading-relaxed drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
         >
           Architecting sub-10ms distributed backends, cloud-native DevSecOps, and bare-metal GPU kernels.
@@ -86,7 +75,7 @@ const AnimeScene = () => {
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
+          transition={{ duration: 0.6, delay: 0.34 }}
           className="flex flex-wrap items-center justify-center gap-3 mb-10"
         >
           {HERO_BADGES.map((badge, idx) => (

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { HiMenuAlt3, HiX, HiDownload } from 'react-icons/hi';
+import BrandLogo from './BrandLogo';
 
 const NAV_ITEMS = [
   { name: 'Home', href: '#home' },
@@ -14,6 +15,12 @@ const NAV_ITEMS = [
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,15 +41,19 @@ const Nav = () => {
           : 'bg-gradient-to-b from-[#010308]/90 to-transparent py-5'
       }`}
     >
+      {/* Top Scroll Progress Laser Line */}
+      <motion.div
+        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-blue-600 via-sky-400 to-blue-300 origin-left z-50 shadow-[0_0_12px_#60a5fa]"
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-4">
-        {/* Brand Identity */}
+        {/* Brand Identity with Custom Geometric PS Emblem */}
         <a
           href="#home"
           className="group flex items-center gap-3 focus:outline-none"
         >
-          <span className="w-9 h-9 rounded-lg bg-blue-500/15 border border-blue-400/40 text-blue-400 font-mono font-bold text-sm flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.35)] transition-transform duration-300 group-hover:scale-105">
-            PS
-          </span>
+          <BrandLogo className="w-10 h-10" />
           <div className="flex flex-col">
             <span className="font-display text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">
               Paramveer Singh
