@@ -40,11 +40,15 @@ const AboutMe = () => {
           className="nichirin-card lg:col-span-7 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6"
         >
           <div className="relative shrink-0 group">
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-blue-600 to-sky-400 opacity-50 blur-md group-hover:opacity-90 transition duration-500" />
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-blue-600 to-sky-400 opacity-55 blur-md group-hover:opacity-95 transition duration-500" />
             <img
-              src="/anime_hero.gif"
+              src="/github_avatar.png"
               alt={aboutData.name}
-              className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border border-blue-400/30"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = 'https://github.com/Paramveersingh-S.png';
+              }}
+              className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border border-blue-400/35 bg-[#020611]"
             />
           </div>
 
