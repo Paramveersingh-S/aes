@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#07193f" />
+      <stop offset="100%" stop-color="#010308" />
+    </linearGradient>
+    <linearGradient id="bladeGrad" x1="15" y1="15" x2="105" y2="105" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#93c5fd" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="20" y1="85" x2="95" y2="25" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Hexagonal Night Shield -->
+  <polygon
+    points="60,5 110,32 110,88 60,115 10,88 10,32"
+    fill="url(#bgGrad)"
+    stroke="url(#bladeGrad)"
+    stroke-width="6"
+  />
+
+  <!-- Custom Interlocking Geometric 'P' and 'S' Monogram -->
+  <path
+    d="M35 88 V32 H67 C78 32 84 39 84 48 C84 57 78 63 67 63 H47"
+    stroke="url(#bladeGrad)"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M79 49 H55 C48 49 44 53 44 59 C44 65 48 68 57 69 L70 71 C79 72 84 77 84 83 C84 91 77 95 64 95 H35"
+    stroke="url(#accentGlow)"
+    stroke-width="9"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Starlight North Star Spark at Apex -->
+  <circle cx="60" cy="19" r="4" fill="#e0f2fe" />
+</svg>

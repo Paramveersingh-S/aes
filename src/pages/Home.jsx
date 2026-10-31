@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Nav from '../components/layout/Nav';
 import Footer from '../components/layout/Footer';
 import SectionWrapper from '../components/layout/SectionWrapper';
@@ -12,14 +12,26 @@ import ProjectGrid from '../components/projects/ProjectGrid';
 import ArticleGrid from '../components/articles/ArticleGrid';
 import ResumeViewer from '../components/resume/ResumeViewer';
 import KatanaCanvas from '../components/effects/KatanaCanvas';
+import CommandPalette from '../components/effects/CommandPalette';
 
 const Home = () => {
+  const [commandOpen, setCommandOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOpen = () => setCommandOpen(true);
+    window.addEventListener('open-command-palette', handleOpen);
+    return () => window.removeEventListener('open-command-palette', handleOpen);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#010308] text-[#f0f6ff] relative selection:bg-[#2563eb] selection:text-white">
-      {/* Interactive Night Sky Stars + Starlight Cursor Trail + Click Ripple Canvas */}
+      {/* Interactive Night Sky Stars + Constellation Lines + Shooting Stars + Cursor Trail Canvas */}
       <KatanaCanvas />
 
-      <Nav />
+      {/* Ctrl+K Spotlight Command Palette */}
+      <CommandPalette isOpen={commandOpen} onClose={() => setCommandOpen(false)} />
+
+      <Nav onOpenCommandPalette={() => setCommandOpen(true)} />
 
       <main className="flex-grow relative z-10">
         <AnimeScene />

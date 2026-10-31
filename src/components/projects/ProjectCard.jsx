@@ -1,7 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa6';
-import { HiExternalLink, HiStar } from 'react-icons/hi';
+import { HiExternalLink, HiStar, HiChip } from 'react-icons/hi';
 
 const LANG_COLORS = {
   Python: '#38bdf8',
@@ -14,20 +13,30 @@ const LANG_COLORS = {
   Go: '#38bdf8'
 };
 
-const ProjectCard = ({ repo, index = 0 }) => {
+const ProjectCard = ({ repo, index = 0, onInspect }) => {
   const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-    e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+
+    const rotateY = ((x / rect.width) - 0.5) * 9;
+    const rotateX = ((y / rect.height) - 0.5) * -9;
+    card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+  };
+
+  const handleMouseLeave = (e) => {
+    e.currentTarget.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)';
   };
 
   const langColor = LANG_COLORS[repo.language] || '#60a5fa';
 
   return (
-    <motion.div
-      layout
-      whileHover={{ y: -6 }}
+    <div
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className="nichirin-card group rounded-2xl p-6 flex flex-col justify-between h-full"
     >
       <div>
@@ -69,6 +78,37 @@ const ProjectCard = ({ repo, index = 0 }) => {
           {repo.excerpt || repo.description}
         </p>
 
+        {/* Animated SVG Data-Flow Pipeline Pulse */}
+        <div className="mb-4 px-3 py-2 rounded-xl bg-[#020611]/90 border border-blue-400/15">
+          <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 mb-1">
+            <span>INGEST</span>
+            <span className="text-blue-400">{repo.language || 'CORE'} ENGINE</span>
+            <span>TELEMETRY</span>
+          </div>
+          <svg viewBox="0 0 240 10" className="w-full h-2.5 overflow-visible">
+            <line
+              x1="4"
+              y1="5"
+              x2="236"
+              y2="5"
+              stroke="rgba(59, 130, 246, 0.25)"
+              strokeWidth="2"
+              strokeDasharray="4 4"
+            />
+            <circle cx="4" cy="5" r="3" fill="#3b82f6" />
+            <circle cx="120" cy="5" r="3" fill="#60a5fa" />
+            <circle cx="236" cy="5" r="3" fill="#93c5fd" />
+            <circle r="3.5" cy="5" fill="#ffffff">
+              <animate
+                attributeName="cx"
+                values="4;236;4"
+                dur="3.2s"
+                repeatCount="indefinite"
+              />
+            </circle>
+          </svg>
+        </div>
+
         {/* Telemetry Metric Pills */}
         {repo.metrics && repo.metrics.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mb-5">
@@ -85,30 +125,41 @@ const ProjectCard = ({ repo, index = 0 }) => {
       </div>
 
       {/* Action Buttons */}
-      <div className="pt-4 border-t border-blue-400/15 flex items-center gap-2.5">
+      <div className="pt-4 border-t border-blue-400/15 flex items-center gap-2">
         <a
           href={repo.html_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="katana-btn flex-1 py-2 px-3 rounded-xl bg-blue-500/10 hover:bg-[#2563eb] border border-blue-400/25 hover:border-blue-400 text-slate-200 hover:text-white font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
+          className="katana-btn flex-1 py-2 px-3 rounded-xl bg-blue-500/10 hover:bg-[#2563eb] border border-blue-400/25 hover:border-blue-400 text-slate-200 hover:text-white font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5"
         >
           <FaGithub className="w-3.5 h-3.5" />
-          <span>View Code</span>
+          <span>Code</span>
         </a>
+
+        {onInspect && (
+          <button
+            type="button"
+            onClick={() => onInspect(repo)}
+            className="katana-btn py-2 px-3 rounded-xl bg-[#040c20] hover:bg-blue-500/25 border border-blue-400/25 hover:border-blue-400 text-blue-300 hover:text-white font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer"
+          >
+            <HiChip className="w-3.5 h-3.5" />
+            <span>Specs</span>
+          </button>
+        )}
 
         {repo.homepage && (
           <a
             href={repo.homepage}
             target="_blank"
             rel="noopener noreferrer"
-            className="katana-btn py-2 px-3.5 rounded-xl bg-blue-500/20 border border-blue-400/35 text-blue-300 hover:bg-[#2563eb] hover:text-white font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5"
+            className="katana-btn py-2 px-3 rounded-xl bg-blue-500/20 border border-blue-400/35 text-blue-300 hover:bg-[#2563eb] hover:text-white font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1"
           >
-            <span>Live Demo</span>
+            <span>Live</span>
             <HiExternalLink className="w-3.5 h-3.5" />
           </a>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import techData from '../../data/techstack.json';
+import BenchmarkTerminal from './BenchmarkTerminal';
 import * as SimpleIcons from 'react-icons/si';
 
 const TechStackGrid = () => {
@@ -94,6 +95,9 @@ const TechStackGrid = () => {
           );
         })}
       </motion.div>
+
+      {/* Interactive Live Benchmark Terminal */}
+      <BenchmarkTerminal />
     </div>
   );
 };

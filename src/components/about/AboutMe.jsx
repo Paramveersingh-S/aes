@@ -1,15 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import aboutData from '../../data/about.json';
 import featuredOrgs from '../../data/featuredOrgs.json';
 import SocialLinks from './SocialLinks';
 import { HiExternalLink } from 'react-icons/hi';
 
+const CHARS = '0123456789.#+KX';
+
+const ScrambleValue = ({ target }) => {
+  const [display, setDisplay] = useState(target);
+
+  const triggerScramble = () => {
+    let iteration = 0;
+    const interval = setInterval(() => {
+      setDisplay(
+        target
+          .split('')
+          .map((ch, idx) => {
+            if (idx < iteration) return target[idx];
+            return CHARS[Math.floor(Math.random() * CHARS.length)];
+          })
+          .join('')
+      );
+      iteration += 0.35;
+      if (iteration >= target.length) {
+        setDisplay(target);
+        clearInterval(interval);
+      }
+    }, 35);
+  };
+
+  useEffect(() => {
+    triggerScramble();
+  }, [target]);
+
+  return (
+    <span onMouseEnter={triggerScramble} className="cursor-default">
+      {display}
+    </span>
+  );
+};
+
 const AboutMe = () => {
   const handleCardMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-    e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+
+    const rotateY = ((x / rect.width) - 0.5) * 8;
+    const rotateX = ((y / rect.height) - 0.5) * -8;
+    card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+  };
+
+  const handleCardMouseLeave = (e) => {
+    e.currentTarget.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)';
   };
 
   return (
@@ -37,6 +84,7 @@ const AboutMe = () => {
         {/* Left: Profile Card */}
         <div
           onMouseMove={handleCardMouseMove}
+          onMouseLeave={handleCardMouseLeave}
           className="nichirin-card lg:col-span-7 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6"
         >
           <div className="relative shrink-0 group">
@@ -72,13 +120,13 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* Right: 2x2 High-Impact Telemetry Stats */}
+        {/* Right: 2x2 High-Impact Telemetry Stats with Cyber-Scramble & 3D Tilt */}
         <div className="lg:col-span-5 grid grid-cols-2 gap-4">
           {(aboutData.stats || []).map((stat, idx) => (
-            <motion.div
+            <div
               key={idx}
-              whileHover={{ y: -4, scale: 1.02 }}
               onMouseMove={handleCardMouseMove}
+              onMouseLeave={handleCardMouseLeave}
               className="nichirin-card rounded-2xl p-5 flex flex-col justify-between"
             >
               <div className="flex items-center justify-between mb-2">
@@ -90,12 +138,12 @@ const AboutMe = () => {
                 </span>
               </div>
               <div className="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight my-1">
-                {stat.value}
+                <ScrambleValue target={stat.value} />
               </div>
               <div className="font-mono text-[11px] text-sky-300">
                 {stat.sub}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
-import { HiMenuAlt3, HiX, HiDownload } from 'react-icons/hi';
+import { HiMenuAlt3, HiX, HiDownload, HiSearch } from 'react-icons/hi';
 import BrandLogo from './BrandLogo';
 
 const NAV_ITEMS = [
@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { name: 'Resume', href: '#resume' }
 ];
 
-const Nav = () => {
+const Nav = ({ onOpenCommandPalette }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -77,8 +77,21 @@ const Nav = () => {
           ))}
         </nav>
 
-        {/* Right CTA + Mobile Menu Trigger */}
+        {/* Right Controls: Command Palette Trigger + Resume CTA + Mobile Menu */}
         <div className="flex items-center gap-2.5">
+          <button
+            type="button"
+            onClick={onOpenCommandPalette}
+            title="Open Command Palette (Ctrl+K)"
+            className="katana-btn px-3 py-2 rounded-lg bg-[#040c20] border border-blue-400/25 hover:border-blue-400 text-slate-300 hover:text-white font-mono text-xs flex items-center gap-2 cursor-pointer"
+          >
+            <HiSearch className="w-3.5 h-3.5 text-blue-400" />
+            <span className="hidden sm:inline">Search</span>
+            <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] rounded bg-blue-500/15 text-blue-300 border border-blue-400/25">
+              Ctrl+K
+            </kbd>
+          </button>
+
           <a
             href="/resume/Paramveer_Singh_Resume.pdf"
             download="Paramveer_Singh_CV.pdf"

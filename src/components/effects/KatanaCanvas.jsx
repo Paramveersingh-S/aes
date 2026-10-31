@@ -21,28 +21,44 @@ const KatanaCanvas = () => {
     window.addEventListener('resize', handleResize);
 
     // Twinkling Night Sky Stars
-    const starCount = Math.min(110, Math.floor(width / 14));
+    const starCount = Math.min(115, Math.floor(width / 14));
     const stars = Array.from({ length: starCount }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       size: Math.random() * 1.8 + 0.4,
-      speedY: -(Math.random() * 0.15 + 0.03),
-      speedX: (Math.random() - 0.5) * 0.1,
+      speedY: -(Math.random() * 0.16 + 0.03),
+      speedX: (Math.random() - 0.5) * 0.12,
       alpha: Math.random() * 0.75 + 0.2,
       twinklePhase: Math.random() * Math.PI * 2,
       twinkleSpeed: Math.random() * 0.03 + 0.01,
       color: PALETTE[Math.floor(Math.random() * PALETTE.length)]
     }));
 
-    // Cursor Starlight Trail
+    // Shooting Stars
+    const shootingStars = [];
+    const spawnShootingStar = () => {
+      if (shootingStars.length < 2 && Math.random() < 0.018) {
+        shootingStars.push({
+          x: Math.random() * width * 0.85,
+          y: Math.random() * height * 0.45,
+          vx: 7 + Math.random() * 5,
+          vy: 3.5 + Math.random() * 3,
+          length: 75 + Math.random() * 45,
+          life: 1.0
+        });
+      }
+    };
+
+    // Mouse coordinates for Constellation lines & Trail
+    const mouse = { x: -1000, y: -1000 };
     const trail = [];
     const maxTrail = 18;
-
-    // Click Starbursts & Ripples
     const ripples = [];
     const sparks = [];
 
     const handleMouseMove = (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
       trail.push({
         x: e.clientX,
         y: e.clientY,
@@ -58,7 +74,7 @@ const KatanaCanvas = () => {
         x: e.clientX,
         y: e.clientY,
         radius: 4,
-        maxRadius: 65,
+        maxRadius: 68,
         life: 1.0
       });
 
@@ -83,8 +99,9 @@ const KatanaCanvas = () => {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // 1. Render Twinkling Night Stars
-      for (const s of stars) {
+      // 1. Render Twinkling Night Stars + Cursor Constellation Web
+      for (let i = 0; i < stars.length; i++) {
+        const s = stars[i];
         s.twinklePhase += s.twinkleSpeed;
         s.x += s.speedX;
         s.y += s.speedY;
@@ -107,9 +124,59 @@ const KatanaCanvas = () => {
         ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
         ctx.fill();
         ctx.restore();
+
+        // Connect star to cursor if nearby (Constellation effect)
+        const dxMouse = s.x - mouse.x;
+        const dyMouse = s.y - mouse.y;
+        const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+        if (distMouse < 145) {
+          ctx.save();
+          ctx.globalAlpha = (1 - distMouse / 145) * 0.38;
+          ctx.strokeStyle = '#60a5fa';
+          ctx.lineWidth = 0.9;
+          ctx.beginPath();
+          ctx.moveTo(s.x, s.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+          ctx.restore();
+        }
       }
 
-      // 2. Render Starlight Cursor Trail
+      // 2. Spawn & Render Shooting Stars
+      spawnShootingStar();
+      for (let i = shootingStars.length - 1; i >= 0; i--) {
+        const st = shootingStars[i];
+        st.x += st.vx;
+        st.y += st.vy;
+        st.life -= 0.022;
+
+        if (st.life <= 0 || st.x > width + 100 || st.y > height + 100) {
+          shootingStars.splice(i, 1);
+          continue;
+        }
+
+        ctx.save();
+        ctx.globalAlpha = st.life;
+        const tailX = st.x - st.vx * (st.length / 10);
+        const tailY = st.y - st.vy * (st.length / 10);
+        const grad = ctx.createLinearGradient(st.x, st.y, tailX, tailY);
+        grad.addColorStop(0, '#ffffff');
+        grad.addColorStop(0.3, '#93c5fd');
+        grad.addColorStop(1, 'transparent');
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = 2.2;
+        ctx.lineCap = 'round';
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = '#60a5fa';
+        ctx.beginPath();
+        ctx.moveTo(st.x, st.y);
+        ctx.lineTo(tailX, tailY);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // 3. Render Starlight Cursor Trail
       if (trail.length > 1) {
         ctx.save();
         for (let i = 1; i < trail.length; i++) {
@@ -136,7 +203,7 @@ const KatanaCanvas = () => {
         if (trail[i].life <= 0) trail.splice(i, 1);
       }
 
-      // 3. Render Click Starlight Ripples
+      // 4. Render Click Starlight Ripples
       for (let i = ripples.length - 1; i >= 0; i--) {
         const r = ripples[i];
         r.radius += (r.maxRadius - r.radius) * 0.14;
@@ -159,7 +226,7 @@ const KatanaCanvas = () => {
         ctx.restore();
       }
 
-      // 4. Render Click Sparks
+      // 5. Render Click Sparks
       for (let i = sparks.length - 1; i >= 0; i--) {
         const sp = sparks[i];
         sp.x += sp.vx;
