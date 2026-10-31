@@ -8,21 +8,21 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full py-14 bg-[#020204] border-t border-white/10 overflow-hidden">
+    <footer className="relative w-full py-14 bg-[#010308] border-t border-blue-400/15 overflow-hidden">
       <div className="katana-divider absolute top-0 left-0 right-0" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
-        {/* Left: Seal + Signature */}
+        {/* Left: Identity */}
         <div className="flex items-center gap-4">
-          <div className="hanko-seal w-11 h-11 rounded-lg text-lg">
-            鬼滅
+          <div className="w-10 h-10 rounded-lg bg-blue-500/15 border border-blue-400/40 text-blue-400 font-mono font-bold text-sm flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+            PS
           </div>
           <div>
-            <p className="font-display text-white font-bold tracking-wider text-base">
-              PARAMVEER SINGH // パラムヴィール
+            <p className="font-display text-white font-bold tracking-tight text-base">
+              Paramveer Singh
             </p>
-            <p className="font-mono text-xs text-gray-400">
-              Forged in Night Obsidian • Total Concentration Constant (全集中・常中)
+            <p className="font-mono text-xs text-slate-400">
+              Systems, Cloud & AI Infrastructure Engineer
             </p>
           </div>
         </div>
@@ -30,13 +30,13 @@ const Footer = () => {
         {/* Center: Social Links */}
         <SocialLinks />
 
-        {/* Right: Back to Top Katana Button */}
+        {/* Right: Back to Top Button */}
         <button
           onClick={scrollToTop}
-          className="katana-btn px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/15 hover:border-[var(--accent)] text-xs font-mono uppercase tracking-widest text-gray-200 flex items-center gap-2 cursor-pointer"
+          className="katana-btn px-4 py-2.5 rounded-xl bg-blue-500/10 border border-blue-400/25 hover:border-blue-400 text-xs font-mono uppercase tracking-widest text-slate-200 flex items-center gap-2 cursor-pointer"
         >
-          <span>ASCEND // 昇</span>
-          <HiArrowUp className="w-4 h-4 text-[var(--accent)]" />
+          <span>Back to Top</span>
+          <HiArrowUp className="w-4 h-4 text-blue-400" />
         </button>
       </div>
     </footer>

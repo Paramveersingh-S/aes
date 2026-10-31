@@ -22,44 +22,39 @@
     font-family: var(--font-display);
   }
 
-  .font-jp {
-    font-family: var(--font-jp);
-  }
-
   .font-mono {
     font-family: var(--font-mono);
   }
 }
 
-/* Custom Obsidian Scrollbar */
+/* Custom Night-Blue & Black Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #030305;
+  background: #010308;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--accent), var(--accent-secondary));
+  background: linear-gradient(180deg, #1d4ed8, #60a5fa);
   border-radius: 9999px;
 }
 
-/* Subtle Japanese Asanoha / Seigaiha Night Grid Pattern */
-.bg-infinity-castle {
-  background-color: #030305;
+/* Deep Night Sky & Pitch Black Horizon Background */
+.bg-night-sky {
+  background-color: #02050d;
   background-image:
-    radial-gradient(circle at 50% 0%, var(--accent-soft) 0%, transparent 60%),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 44px 44px, 44px 44px;
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(21, 54, 117, 0.55) 0%, rgba(6, 16, 36, 0.25) 55%, transparent 100%),
+    radial-gradient(ellipse 60% 40% at 75% 25%, rgba(59, 130, 246, 0.14) 0%, transparent 70%),
+    linear-gradient(180deg, #040b1d 0%, #02050d 65%, #010206 100%);
 }
 
-/* Katana Slash Button - Maximalist Interactive Button */
+/* Animated Interactive Button */
 .katana-btn {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .katana-btn::before {
@@ -72,11 +67,11 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.38),
-    var(--accent),
+    rgba(255, 255, 255, 0.35),
+    rgba(125, 211, 252, 0.55),
     transparent
   );
-  transform: rotate(28deg);
+  transform: rotate(25deg);
   transition: left 0.55s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1;
   pointer-events: none;
@@ -90,7 +85,7 @@
   transform: translateY(-2px) scale(1.02);
   box-shadow:
     0 0 24px -4px var(--accent-glow),
-    0 0 8px 0px var(--accent-soft),
+    0 0 10px 0px var(--accent-soft),
     inset 0 0 12px var(--accent-soft);
 }
 
@@ -98,13 +93,13 @@
   transform: translateY(1px) scale(0.97);
 }
 
-/* Nichirin Card - Night Black Surface with Breathing Aura */
+/* Night-Black & Cobalt Glass Card */
 .nichirin-card {
   position: relative;
-  background: linear-gradient(145deg, rgba(12, 12, 20, 0.92) 0%, rgba(5, 5, 10, 0.96) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(155deg, rgba(8, 20, 48, 0.72) 0%, rgba(2, 5, 13, 0.94) 100%);
+  border: 1px solid rgba(147, 197, 253, 0.12);
   backdrop-filter: blur(16px);
-  transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 }
 
@@ -113,8 +108,8 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    500px circle at var(--mouse-x, 50%) var(--mouse-y, 0%),
-    var(--accent-soft),
+    480px circle at var(--mouse-x, 50%) var(--mouse-y, 0%),
+    rgba(59, 130, 246, 0.16),
     transparent 55%
   );
   opacity: 0;
@@ -125,7 +120,7 @@
 .nichirin-card:hover {
   border-color: var(--accent-border);
   box-shadow:
-    0 14px 40px -12px rgba(0, 0, 0, 0.9),
+    0 14px 40px -12px rgba(0, 0, 0, 0.95),
     0 0 28px -8px var(--accent-glow);
 }
 
@@ -133,60 +128,19 @@
   opacity: 1;
 }
 
-/* Katana Blade Horizontal Divider */
+/* Section Horizon Divider */
 .katana-divider {
   height: 1px;
   width: 100%;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.08) 20%,
-    var(--accent) 50%,
-    rgba(255, 255, 255, 0.08) 80%,
+    rgba(59, 130, 246, 0.15) 20%,
+    rgba(96, 165, 250, 0.65) 50%,
+    rgba(59, 130, 246, 0.15) 80%,
     transparent 100%
   );
   position: relative;
-}
-
-/* Vertical Japanese Watermark Text */
-.writing-vertical-jp {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  letter-spacing: 0.25em;
-}
-
-/* Hanko Red Stamp Seal */
-.hanko-seal {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid var(--accent);
-  color: var(--accent);
-  font-family: var(--font-jp);
-  font-weight: 900;
-  box-shadow: 0 0 14px var(--accent-glow), inset 0 0 8px var(--accent-soft);
-  text-shadow: 0 0 8px var(--accent-glow);
-}
-
-/* Keyframe Animations */
-@keyframes pulse-aura {
-  0%, 100% {
-    opacity: 0.45;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.85;
-    transform: scale(1.06);
-  }
-}
-
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
 }
 
 @keyframes border-shimmer {
@@ -201,16 +155,8 @@
   }
 }
 
-.animate-aura {
-  animation: pulse-aura 3.5s ease-in-out infinite;
-}
-
-.animate-float {
-  animation: float-slow 4.5s ease-in-out infinite;
-}
-
-.text-gradient-breathing {
-  background: linear-gradient(120deg, #ffffff 10%, var(--accent) 55%, var(--accent-secondary) 95%);
+.text-gradient-night {
+  background: linear-gradient(120deg, #ffffff 15%, #93c5fd 55%, #3b82f6 95%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -219,7 +165,7 @@
 
 /* Dark Prose inside Article Reader Modal */
 .substack-dark-prose {
-  color: #d1d5db;
+  color: #dbeafe;
   line-height: 1.8;
   font-size: 1.05rem;
 }
@@ -236,12 +182,12 @@
   margin-bottom: 1.25rem;
 }
 .substack-dark-prose a {
-  color: var(--accent);
+  color: #60a5fa;
   text-decoration: underline;
 }
 .substack-dark-prose img {
   border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(147, 197, 253, 0.15);
   margin: 1.5rem auto;
   max-width: 100%;
   height: auto;
@@ -253,9 +199,9 @@
   list-style-type: disc;
 }
 .substack-dark-prose blockquote {
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid #3b82f6;
   padding-left: 1rem;
-  color: #9ca3af;
+  color: #93c5fd;
   font-style: italic;
 }
 .substack-dark-prose .subscription-widget-wrap-editor,

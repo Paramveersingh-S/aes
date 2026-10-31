@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const SectionWrapper = ({ id, children, className = '', kanjiWatermark = '' }) => {
+const SectionWrapper = ({ id, children, className = '' }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,20 +24,9 @@ const SectionWrapper = ({ id, children, className = '', kanjiWatermark = '' }) =
   return (
     <section
       id={id}
-      className={`relative w-full py-20 md:py-28 bg-infinity-castle text-[var(--text-primary)] overflow-hidden ${className}`}
+      className={`relative w-full py-20 md:py-28 bg-night-sky text-[var(--text-primary)] overflow-hidden ${className}`}
     >
-      {/* Subtle Top Katana Divider */}
       <div className="katana-divider absolute top-0 left-0 right-0 opacity-60" />
-
-      {/* Vertical Japanese Kanji Background Watermark */}
-      {kanjiWatermark && (
-        <div
-          aria-hidden="true"
-          className="hidden xl:block absolute right-6 top-1/2 -translate-y-1/2 writing-vertical-jp font-jp text-7xl font-black text-white/[0.025] select-none pointer-events-none"
-        >
-          {kanjiWatermark}
-        </div>
-      )}
 
       <motion.div
         className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 md:px-12"

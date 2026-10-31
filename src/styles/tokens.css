@@ -1,69 +1,38 @@
 :root,
 html.dark {
-  /* Night Black & Obsidian Void Palette */
-  --bg-void: #020204;
-  --bg-primary: #050508;
-  --bg-secondary: #08080e;
-  --bg-elevated: #0c0c14;
-  --bg-card: rgba(11, 11, 18, 0.82);
-  --bg-card-hover: rgba(17, 17, 28, 0.95);
-  --bg-inverted: #030306;
+  /* Night Sky Palette from Reference Image:
+     1. Pitch Silhouette Black (#010308 / #030712 / #050b1a)
+     2. Deep Nocturnal Cobalt & Starlight Blue (#0b1d42 / #153675 / #2563eb / #4f8ff7 / #7dd3fc) */
+  --bg-void: #010308;
+  --bg-primary: #030712;
+  --bg-secondary: #061024;
+  --bg-elevated: #091734;
+  --bg-card: rgba(6, 15, 35, 0.78);
+  --bg-card-hover: rgba(10, 25, 56, 0.92);
+  --bg-inverted: #02050d;
 
   /* Text Hierarchy */
-  --text-primary: #f4f4f8;
-  --text-secondary: #9ca3af;
+  --text-primary: #f0f6ff;
+  --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --text-inverted: #f4f4f8;
+  --text-inverted: #f0f6ff;
 
-  /* Default Breathing Style: Hinokami Kagura (Sun/Flame Crimson & Gold) */
-  --accent: #ff2a54;
-  --accent-secondary: #f59e0b;
-  --accent-tertiary: #00f0ff;
-  --accent-glow: rgba(255, 42, 84, 0.42);
-  --accent-soft: rgba(255, 42, 84, 0.12);
-  --accent-border: rgba(255, 42, 84, 0.35);
+  /* Night Sky Blue Accents */
+  --accent: #3b82f6;
+  --accent-bright: #60a5fa;
+  --accent-secondary: #7dd3fc;
+  --accent-deep: #153675;
+  --accent-glow: rgba(59, 130, 246, 0.45);
+  --accent-soft: rgba(59, 130, 246, 0.14);
+  --accent-border: rgba(96, 165, 250, 0.35);
 
   /* Borders */
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-strong: rgba(255, 42, 84, 0.45);
-  --color-off-white: #0d0d16;
+  --color-border: rgba(147, 197, 253, 0.12);
+  --color-border-strong: rgba(96, 165, 250, 0.45);
+  --color-off-white: #071228;
 
   /* Typography */
-  --font-display: 'Cinzel', 'Noto Serif JP', serif;
-  --font-jp: 'Noto Serif JP', serif;
-  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-}
-
-/* Water Breathing (Mizu no Kokyu) */
-html[data-breathing="water"] {
-  --accent: #00f0ff;
-  --accent-secondary: #3b82f6;
-  --accent-tertiary: #38bdf8;
-  --accent-glow: rgba(0, 240, 255, 0.42);
-  --accent-soft: rgba(0, 240, 255, 0.12);
-  --accent-border: rgba(0, 240, 255, 0.38);
-  --color-border-strong: rgba(0, 240, 255, 0.45);
-}
-
-/* Thunder Breathing (Kaminari no Kokyu) */
-html[data-breathing="thunder"] {
-  --accent: #facc15;
-  --accent-secondary: #38bdf8;
-  --accent-tertiary: #f59e0b;
-  --accent-glow: rgba(250, 204, 21, 0.42);
-  --accent-soft: rgba(250, 204, 21, 0.12);
-  --accent-border: rgba(250, 204, 21, 0.38);
-  --color-border-strong: rgba(250, 204, 21, 0.45);
-}
-
-/* Moon / Wisteria Breathing (Tsuki no Kokyu) */
-html[data-breathing="moon"] {
-  --accent: #c084fc;
-  --accent-secondary: #ff2a54;
-  --accent-tertiary: #e879f9;
-  --accent-glow: rgba(192, 132, 252, 0.42);
-  --accent-soft: rgba(192, 132, 252, 0.12);
-  --accent-border: rgba(192, 132, 252, 0.38);
-  --color-border-strong: rgba(192, 132, 252, 0.45);
 }

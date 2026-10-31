@@ -15,8 +15,8 @@ import KatanaCanvas from '../components/effects/KatanaCanvas';
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-[#030305] text-[#f4f4f8] relative selection:bg-[var(--accent)] selection:text-black">
-      {/* Interactive Demon Slayer Embers + Katana Blade Trail + Click Slash Canvas */}
+    <div className="min-h-screen flex flex-col bg-[#010308] text-[#f0f6ff] relative selection:bg-[#2563eb] selection:text-white">
+      {/* Interactive Night Sky Stars + Starlight Cursor Trail + Click Ripple Canvas */}
       <KatanaCanvas />
 
       <Nav />
@@ -24,26 +24,26 @@ const Home = () => {
       <main className="flex-grow relative z-10">
         <AnimeScene />
 
-        <SectionWrapper id="about" kanjiWatermark="柱の記録">
+        <SectionWrapper id="about">
           <AboutMe />
           <AchievementsGrid />
           <OSSContributions />
           <ContributionHeatmap />
         </SectionWrapper>
 
-        <SectionWrapper id="tech" kanjiWatermark="日輪刀">
+        <SectionWrapper id="tech">
           <TechStackGrid />
         </SectionWrapper>
 
-        <SectionWrapper id="projects" kanjiWatermark="血気術">
+        <SectionWrapper id="projects">
           <ProjectGrid />
         </SectionWrapper>
 
-        <SectionWrapper id="writing" kanjiWatermark="技術巻物">
+        <SectionWrapper id="writing">
           <ArticleGrid />
         </SectionWrapper>
 
-        <SectionWrapper id="resume" kanjiWatermark="履歴書">
+        <SectionWrapper id="resume">
           <ResumeViewer />
         </SectionWrapper>
       </main>

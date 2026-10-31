@@ -9,11 +9,11 @@ const ProjectFilterBar = ({ filters, activeFilter, onSelectFilter }) => {
         onClick={() => onSelectFilter('All')}
         className={`katana-btn px-4 py-2 rounded-xl text-xs font-mono uppercase tracking-wider cursor-pointer ${
           activeFilter === 'All'
-            ? 'bg-[var(--accent)] text-black font-bold shadow-[0_0_20px_var(--accent-glow)]'
-            : 'bg-[#090912] text-gray-300 border border-white/10 hover:border-[var(--accent-border)]'
+            ? 'bg-[#2563eb] text-white font-bold shadow-[0_0_20px_rgba(37,99,235,0.45)]'
+            : 'bg-[#040b1d] text-slate-300 border border-blue-400/15 hover:border-blue-400/45'
         }`}
       >
-        ALL TECHNIQUES // 全て
+        All Projects
       </button>
       {filters.map((filter) => (
         <button
@@ -21,8 +21,8 @@ const ProjectFilterBar = ({ filters, activeFilter, onSelectFilter }) => {
           onClick={() => onSelectFilter(filter)}
           className={`katana-btn px-4 py-2 rounded-xl text-xs font-mono uppercase tracking-wider cursor-pointer ${
             activeFilter === filter
-              ? 'bg-[var(--accent)] text-black font-bold shadow-[0_0_20px_var(--accent-glow)]'
-              : 'bg-[#090912] text-gray-300 border border-white/10 hover:border-[var(--accent-border)]'
+              ? 'bg-[#2563eb] text-white font-bold shadow-[0_0_20px_rgba(37,99,235,0.45)]'
+              : 'bg-[#040b1d] text-slate-300 border border-blue-400/15 hover:border-blue-400/45'
           }`}
         >
           {filter}

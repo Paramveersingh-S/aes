@@ -1,14 +1,13 @@
 {
   "name": "Paramveer Singh",
-  "kanjiName": "パラムヴィール・シン",
-  "rankTitle": "HASHIRA // SYSTEMS, CLOUD & AI INFRASTRUCTURE",
+  "roleTitle": "SYSTEMS, CLOUD & AI INFRASTRUCTURE ENGINEER",
   "tagline": "Architecting sub-10ms distributed backends, cloud-native DevSecOps, and bare-metal GPU kernels.",
   "bio": "Systems & AI Infrastructure Engineer with 55+ merged open-source PRs across vLLM, CERN, Unikraft, Google DeepMind, and CNCF Meshery. Ranked #1 globally among 2,000 participants at the University of Tokyo Matsuo-Iwasawa Lab.",
   "stats": [
-    { "label": "Merged OSS PRs", "value": "55+", "kanji": "貢献", "sub": "42 External Orgs" },
-    { "label": "U-Tokyo Global Rank", "value": "#1", "kanji": "首席", "sub": "Top 0.05% of 2,000" },
-    { "label": "Gateway Throughput", "value": "5K+", "kanji": "速度", "sub": "RPS @ <10ms p50" },
-    { "label": "GPU Kernel Speedup", "value": "14.0x", "kanji": "極限", "sub": "87.5% Tensor Core" }
+    { "label": "Merged OSS PRs", "value": "55+", "tag": "OSS", "sub": "42 External Orgs" },
+    { "label": "U-Tokyo Global Rank", "value": "#1", "tag": "TOP 0.05%", "sub": "Out of 2,000 Globally" },
+    { "label": "Gateway Throughput", "value": "5K+", "tag": "LATENCY", "sub": "RPS @ <10ms p50" },
+    { "label": "GPU Kernel Speedup", "value": "14.0x", "tag": "CUDA", "sub": "87.5% Tensor Core" }
   ],
   "competitions": [
     {
@@ -54,7 +53,7 @@
       "organization": "Matsuo-Iwasawa Lab, University of Tokyo",
       "period": "Sep 2026 – Present",
       "badge": "RANK #1 / 2000",
-      "metrics": ["PyTorch", "Deep Learning", "Tokyo, Japan (Remote)"],
+      "metrics": ["PyTorch", "Deep Learning", "Remote"],
       "description": "Ranked #1 globally among 2,000 researchers in internal competition; engineered high-efficiency neural inference architectures."
     },
     {

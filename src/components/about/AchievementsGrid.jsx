@@ -1,32 +1,27 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import aboutData from '../../data/about.json';
-import { useLanguage } from '../../contexts/LanguageContext';
 import { HiLightningBolt, HiAcademicCap, HiBriefcase } from 'react-icons/hi';
 
 const AchievementsGrid = () => {
-  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('experience');
 
   const tabs = [
     {
       id: 'experience',
-      label: t('about.expTitle'),
-      kanji: '実戦',
+      label: 'Experience',
       icon: HiBriefcase,
       count: aboutData.experience.length
     },
     {
       id: 'competitions',
-      label: t('about.compTitle'),
-      kanji: '武勲',
+      label: 'Achievements',
       icon: HiLightningBolt,
       count: aboutData.competitions.length
     },
     {
       id: 'publications',
-      label: t('about.pubTitle'),
-      kanji: '論文',
+      label: 'Publications',
       icon: HiAcademicCap,
       count: aboutData.publications.length
     }
@@ -40,7 +35,7 @@ const AchievementsGrid = () => {
 
   return (
     <div className="my-16">
-      {/* Interactive Breathing-Form Tab Switcher */}
+      {/* Interactive Tab Switcher */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
         <div className="flex flex-wrap gap-2.5">
           {tabs.map((tab) => {
@@ -52,16 +47,15 @@ const AchievementsGrid = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`katana-btn px-4 py-2.5 rounded-xl font-mono text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2.5 cursor-pointer ${
                   active
-                    ? 'bg-[var(--accent)] text-black font-bold shadow-[0_0_24px_var(--accent-glow)]'
-                    : 'bg-[#090912] text-gray-300 border border-white/10 hover:border-[var(--accent-border)]'
+                    ? 'bg-[#2563eb] text-white font-bold shadow-[0_0_24px_rgba(37,99,235,0.5)]'
+                    : 'bg-[#040b1d] text-slate-300 border border-blue-400/15 hover:border-blue-400/45'
                 }`}
               >
                 <Icon className="w-4 h-4" />
-                <span className="font-jp font-bold">{tab.kanji}</span>
                 <span>{tab.label}</span>
                 <span
                   className={`px-1.5 py-0.2 rounded text-[10px] ${
-                    active ? 'bg-black/20 text-black' : 'bg-white/10 text-gray-300'
+                    active ? 'bg-black/25 text-white' : 'bg-blue-500/15 text-blue-300'
                   }`}
                 >
                   {tab.count}
@@ -92,10 +86,10 @@ const AchievementsGrid = () => {
               >
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                    <span className="px-2.5 py-1 rounded-md bg-[var(--accent-soft)] border border-[var(--accent-border)] text-[var(--accent)] font-mono font-bold text-[11px]">
+                    <span className="px-2.5 py-1 rounded-md bg-blue-500/15 border border-blue-400/30 text-blue-300 font-mono font-bold text-[11px]">
                       {exp.badge}
                     </span>
-                    <span className="font-mono text-xs text-gray-400">
+                    <span className="font-mono text-xs text-slate-400">
                       {exp.period}
                     </span>
                   </div>
@@ -103,20 +97,20 @@ const AchievementsGrid = () => {
                   <h4 className="font-display text-lg font-bold text-white mb-1">
                     {exp.role}
                   </h4>
-                  <p className="font-mono text-xs text-[var(--accent-secondary)] uppercase tracking-wider mb-3">
+                  <p className="font-mono text-xs text-sky-300 uppercase tracking-wider mb-3">
                     {exp.organization}
                   </p>
-                  <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                  <p className="text-sm text-slate-300 leading-relaxed mb-4">
                     {exp.description}
                   </p>
                 </div>
 
                 {exp.metrics && (
-                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-blue-400/15">
                     {exp.metrics.map((m, i) => (
                       <span
                         key={i}
-                        className="px-2.5 py-0.5 rounded-md bg-white/[0.04] border border-white/10 text-[11px] font-mono text-gray-300"
+                        className="px-2.5 py-0.5 rounded-md bg-[#030816] border border-blue-400/15 text-[11px] font-mono text-slate-300"
                       >
                         {m}
                       </span>
@@ -145,17 +139,17 @@ const AchievementsGrid = () => {
                 className="nichirin-card rounded-2xl p-6"
               >
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="px-2.5 py-1 rounded-md bg-[var(--accent-soft)] border border-[var(--accent-border)] text-[var(--accent)] font-mono font-bold text-[11px]">
+                  <span className="px-2.5 py-1 rounded-md bg-blue-500/15 border border-blue-400/30 text-blue-300 font-mono font-bold text-[11px]">
                     {comp.badge}
                   </span>
-                  <span className="font-mono text-xs text-gray-400">
+                  <span className="font-mono text-xs text-slate-400">
                     {comp.organization} • {comp.date}
                   </span>
                 </div>
                 <h4 className="font-display text-lg font-bold text-white mb-2">
                   {comp.title}
                 </h4>
-                <p className="text-sm text-gray-300 leading-relaxed">
+                <p className="text-sm text-slate-300 leading-relaxed">
                   {comp.description}
                 </p>
               </motion.div>
@@ -180,20 +174,20 @@ const AchievementsGrid = () => {
                 className="nichirin-card rounded-2xl p-6"
               >
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="px-2.5 py-1 rounded-md bg-[var(--accent-soft)] border border-[var(--accent-border)] text-[var(--accent)] font-mono font-bold text-[11px]">
+                  <span className="px-2.5 py-1 rounded-md bg-blue-500/15 border border-blue-400/30 text-blue-300 font-mono font-bold text-[11px]">
                     {pub.badge}
                   </span>
-                  <span className="font-mono text-xs text-emerald-400">
+                  <span className="font-mono text-xs text-sky-300">
                     {pub.status}
                   </span>
                 </div>
                 <h4 className="font-display text-lg font-bold text-white mb-1">
                   {pub.title}
                 </h4>
-                <p className="font-mono text-xs text-[var(--accent-secondary)] mb-3">
+                <p className="font-mono text-xs text-blue-400 mb-3">
                   {pub.venue}
                 </p>
-                <p className="text-sm text-gray-300 leading-relaxed">
+                <p className="text-sm text-slate-300 leading-relaxed">
                   {pub.description}
                 </p>
               </motion.div>
