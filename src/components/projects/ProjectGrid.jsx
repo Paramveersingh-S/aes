@@ -1,112 +1,116 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import reposData from '../../data/repos.json';
 import ProjectCard from './ProjectCard';
 import ProjectFilterBar from './ProjectFilterBar';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
-
-const ALLOWED_REPOS = [
-  'Flash-Atten2-MMA', 
-  'Triton-MLOps', 
-  'Custom-HGEMM', 
-  'GateKeeper', 
-  'microgpt', 
-  'Semantic-search-RAG'
-];
+import { HiExternalLink, HiPlus, HiMinus } from 'react-icons/hi';
 
 const ProjectGrid = () => {
-  const [projects, setProjects] = useState([]);
-  const [activeFilters, setActiveFilters] = useState([]);
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [showAll, setShowAll] = useState(false);
   const { t } = useLanguage();
 
-  useEffect(() => {
-    import('../../data/repos.json')
-      .then((data) => {
-        const filtered = data.default.filter(repo => ALLOWED_REPOS.includes(repo.name));
-        setProjects(filtered);
-      })
-      .catch((err) => console.error("Failed to load repos.json", err));
+  const filters = useMemo(() => {
+    const cats = new Set();
+    reposData.forEach((repo) => {
+      if (repo.category) cats.add(repo.category);
+    });
+    return Array.from(cats);
   }, []);
 
-  const filters = useMemo(() => {
-    const allFilters = new Set();
-    projects.forEach(p => {
-      if (p.language) allFilters.add(p.language);
-      if (p.topics) p.topics.forEach(t => allFilters.add(t));
-    });
-    // keep only top filters or just first few to not clutter
-    return Array.from(allFilters).slice(0, 15);
-  }, [projects]);
+  const filteredRepos = useMemo(() => {
+    const matching =
+      activeFilter === 'All'
+        ? reposData
+        : reposData.filter((repo) => repo.category === activeFilter || repo.language === activeFilter);
 
-  const filteredProjects = useMemo(() => {
-    if (activeFilters.length === 0) return projects;
-    
-    return projects.filter(p => {
-      const matchLang = activeFilters.includes(p.language);
-      const matchTopic = p.topics?.some(t => activeFilters.includes(t));
-      return matchLang || matchTopic;
-    });
-  }, [projects, activeFilters]);
-
-  const toggleFilter = (filter) => {
-    if (filter === 'All') {
-      setActiveFilters([]);
-      return;
-    }
-    
-    setActiveFilters(prev => 
-      prev.includes(filter)
-        ? prev.filter(f => f !== filter)
-        : [...prev, filter]
-    );
-  };
-
-  if (projects.length === 0) return null;
+    return showAll ? matching : matching.slice(0, 12);
+  }, [activeFilter, showAll]);
 
   return (
-    <div id="projects" className="mt-20">
-      <div className="text-center mb-10">
-        <h3 className="text-2xl md:text-3xl font-display font-bold text-[var(--color-orange)] mb-4">
-          {t('projects_title')}
-        </h3>
-        <p className="opacity-80 text-lg max-w-2xl mx-auto">
-          {t('projects_desc')}
-        </p>
+    <div>
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <div className="flex items-center gap-2.5 mb-2">
+            <span className="px-2.5 py-0.5 rounded bg-[var(--accent-soft)] border border-[var(--accent-border)] text-[var(--accent)] font-jp font-bold text-xs">
+              肆ノ型
+            </span>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-gray-400">
+              BLOOD & STEEL ARCHITECTURE // 主要システム
+            </span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight">
+            {t('projects.title')}
+          </h2>
+          <p className="text-sm sm:text-base text-gray-400 mt-1">
+            {t('projects.subtitle')}
+          </p>
+        </div>
       </div>
 
-      <ProjectFilterBar 
-        filters={filters} 
-        activeFilters={activeFilters} 
-        onToggleFilter={toggleFilter} 
+      {/* Category Filter Bar */}
+      <ProjectFilterBar
+        filters={filters}
+        activeFilter={activeFilter}
+        onSelectFilter={setActiveFilter}
       />
 
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Project Cards Grid */}
+      <motion.div
+        layout
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
         <AnimatePresence>
-          {filteredProjects.map((project) => (
+          {filteredRepos.map((repo, idx) => (
             <motion.div
-              key={project.name}
+              key={repo.name}
               layout
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              exit={{ opacity: 0, scale: 0.94 }}
               transition={{ duration: 0.3 }}
             >
-              <ProjectCard project={project} />
+              <ProjectCard repo={repo} index={idx} />
             </motion.div>
           ))}
         </AnimatePresence>
       </motion.div>
-      
-      {filteredProjects.length === 0 && (
-        <div className="text-center py-12 bg-white rounded-xl border border-[var(--color-border)]">
-          <p className="text-lg opacity-70">No projects match the selected filters.</p>
-          <button 
-            onClick={() => setActiveFilters([])}
-            className="mt-4 text-[var(--accent)] hover:underline font-medium"
+
+      {/* Bottom Controls: Expand All Vault + GitHub Profile CTA */}
+      <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+        {reposData.length > 12 && (
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="katana-btn px-6 py-3.5 rounded-xl bg-[#0a0a12] border border-white/15 hover:border-[var(--accent)] text-white font-mono font-bold text-xs uppercase tracking-widest flex items-center gap-2 cursor-pointer"
           >
-            Clear all filters
+            {showAll ? (
+              <>
+                <HiMinus className="w-4 h-4 text-[var(--accent)]" />
+                <span>SHOW TOP 12 FLAGSHIP SYSTEMS</span>
+              </>
+            ) : (
+              <>
+                <HiPlus className="w-4 h-4 text-[var(--accent)]" />
+                <span>UNSEAL ALL {reposData.length} REPOSITORIES</span>
+              </>
+            )}
           </button>
-        </div>
-      )}
+        )}
+
+        <a
+          href="https://github.com/Paramveersingh-S?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="katana-btn px-7 py-3.5 rounded-xl bg-[var(--accent)] text-black font-mono font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-[0_0_24px_var(--accent-glow)]"
+        >
+          <span>
+            {t('projects.viewAll')} {reposData.length} {t('projects.ReposOnGh')}
+          </span>
+          <HiExternalLink className="w-4 h-4" />
+        </a>
+      </div>
     </div>
   );
 };

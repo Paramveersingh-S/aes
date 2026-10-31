@@ -1,132 +1,200 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ossData from '../../data/oss-contributions.json';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { HiExternalLink, HiChevronDown, HiChevronUp, HiCode } from 'react-icons/hi';
 
 const OSSContributions = () => {
-  const [data, setData] = useState(null);
-  const [expandedOrg, setExpandedOrg] = useState(null);
+  const [selectedOrg, setSelectedOrg] = useState('ALL');
+  const [expandedOrgs, setExpandedOrgs] = useState({ CERN: true, 'vllm-project': true });
   const { t } = useLanguage();
 
-  useEffect(() => {
-    import('../../data/oss-contributions.json')
-      .then((res) => setData(res.default))
-      .catch((err) => console.error("Failed to load oss-contributions.json", err));
-  }, []);
+  if (!ossData || ossData.totalMergedPRs === 0) return null;
 
-  if (!data) return null;
+  const toggleExpand = (orgName) => {
+    setExpandedOrgs((prev) => ({
+      ...prev,
+      [orgName]: !prev[orgName]
+    }));
+  };
+
+  const filteredOrgs =
+    selectedOrg === 'ALL'
+      ? ossData.organizations
+      : ossData.organizations.filter((o) => o.org === selectedOrg);
 
   return (
-    <div className="mt-20">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
-        <h3 className="text-2xl md:text-3xl font-display font-bold text-[var(--color-orange)]">
-          {t('oss_title')}
-          <span className="ml-3 text-lg bg-[var(--color-orange-soft)] text-[var(--accent)] px-3 py-1 rounded-full font-sans">
-            {data.totalMergedPRs} {t('oss_merged')}
-          </span>
-        </h3>
-        <a 
-          href="https://github.com/search?q=is%3Apr+is%3Amerged+author%3AParamveersingh-S+-user%3AParamveersingh-S&type=pullrequests" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-[var(--accent)] hover:underline text-sm font-medium mt-2 md:mt-0"
-        >
-          See live search on GitHub →
-        </a>
-      </div>
+    <div className="my-16">
+      {/* Header + Total Merged PR Counter */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
+        <div>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-2 py-0.5 rounded bg-[var(--accent-soft)] border border-[var(--accent-border)] text-[var(--accent)] font-jp font-bold text-xs">
+              連帯
+            </span>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-gray-400">
+              GLOBAL OPEN SOURCE RECORD
+            </span>
+          </div>
+          <h3 className="font-display text-2xl sm:text-4xl font-black text-white">
+            {t('about.ossTitle')}
+          </h3>
+        </div>
 
-      {data.organizations.length === 0 ? (
-        <div className="bg-white p-8 rounded-xl border border-[var(--color-border)] text-center">
-          <p className="text-lg opacity-80 mb-4">No open-source contributions pulled yet.</p>
-          <a 
-            href="https://github.com/search?q=is%3Apr+is%3Amerged+author%3AParamveersingh-S+-user%3AParamveersingh-S&type=pullrequests" 
-            target="_blank" 
+        <div className="flex items-center gap-3">
+          <div className="px-4 py-2 rounded-xl bg-[var(--accent-soft)] border border-[var(--accent-border)] text-[var(--accent)] font-mono text-xs sm:text-sm font-bold flex items-center gap-2">
+            <HiCode className="w-4 h-4" />
+            <span>
+              {ossData.totalMergedPRs} {t('about.prsMerged')}
+            </span>
+          </div>
+          <a
+            href="https://github.com/pulls?q=is%3Apr+author%3AParamveersingh-S+is%3Amerged"
+            target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[var(--accent)] text-white px-6 py-2 rounded-md font-medium hover:bg-orange-600 transition-colors"
+            className="katana-btn px-4 py-2 rounded-xl bg-[#0a0a12] border border-white/15 hover:border-[var(--accent)] text-xs font-mono text-white flex items-center gap-1.5"
           >
-            Check GitHub directly
+            <span>{t('about.viewAllGh')}</span>
+            <HiExternalLink className="w-3.5 h-3.5 text-[var(--accent)]" />
           </a>
         </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {data.organizations.map((orgData, idx) => (
-            <div key={idx} className="bg-white rounded-xl border border-[var(--color-border)] overflow-hidden shadow-sm">
-              <div 
-                className="p-5 flex items-center justify-between cursor-pointer hover:bg-[var(--color-off-white)] transition-colors"
-                onClick={() => setExpandedOrg(expandedOrg === orgData.org ? null : orgData.org)}
-              >
-                <div className="flex items-center space-x-4">
-                  <img 
-                    src={orgData.avatarUrl} 
-                    alt={orgData.org} 
-                    className="w-12 h-12 rounded-full border border-[var(--color-border)]"
-                  />
-                  <div>
-                    <h4 className="font-bold text-lg">{orgData.org}</h4>
-                    <p className="text-sm opacity-70">{orgData.pullRequests.length} pull requests</p>
-                  </div>
-                </div>
-                <div className={`transform transition-transform ${expandedOrg === orgData.org ? 'rotate-180' : ''}`}>
-                  <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </div>
-              
-              <AnimatePresence>
-                {expandedOrg === orgData.org && (
-                  <motion.div 
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="border-t border-[var(--color-border)] bg-[var(--color-off-white)]"
-                  >
-                    <ul className="p-4 space-y-3">
-                      {orgData.pullRequests.map((pr, pIdx) => (
-                        <li key={pIdx} className="text-sm">
-                          <a 
-                            href={pr.url} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex items-start group"
-                          >
-                            <span className="text-green-600 mr-2 mt-0.5">
-                              <svg className="w-4 h-4" viewBox="0 0 16 16" fill="currentColor">
-                                <path fillRule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"></path>
-                              </svg>
-                            </span>
-                            <div>
-                              <span className="group-hover:text-[var(--accent)] group-hover:underline transition-colors block leading-tight mb-1">
-                                {pr.title}
-                              </span>
-                              <span className="text-xs opacity-60 font-mono bg-white px-1.5 py-0.5 rounded border border-[var(--color-border)]">
-                                {pr.repo}
-                              </span>
-                            </div>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
-        </div>
-      )}
+      </div>
 
-      {/* Snake Animation */}
-      <div className="mt-16 overflow-x-auto">
-        <h4 className="text-xl font-bold text-center mb-6 text-[var(--color-orange)]">{t('oss_heatmap')}</h4>
-        <div className="bg-[var(--color-off-white)] rounded-xl border border-[var(--color-border)] p-4 max-w-4xl mx-auto shadow-sm">
-          <img 
-            src="https://raw.githubusercontent.com/Paramveersingh-S/Paramveersingh-S/output/github-contribution-grid-snake.svg" 
-            alt="GitHub Contribution Snake" 
-            className="mx-auto w-full"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
-        </div>
+      {/* Organization Filter Pills */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        <button
+          onClick={() => setSelectedOrg('ALL')}
+          className={`katana-btn px-3.5 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider cursor-pointer ${
+            selectedOrg === 'ALL'
+              ? 'bg-[var(--accent)] text-black font-bold'
+              : 'bg-[#090912] text-gray-300 border border-white/10 hover:border-[var(--accent-border)]'
+          }`}
+        >
+          ALL ORGS ({ossData.organizations.length})
+        </button>
+        {ossData.organizations.map((org) => (
+          <button
+            key={org.org}
+            onClick={() => setSelectedOrg(org.org)}
+            className={`katana-btn px-3 py-1.5 rounded-lg text-xs font-mono flex items-center gap-2 cursor-pointer ${
+              selectedOrg === org.org
+                ? 'bg-[var(--accent)] text-black font-bold'
+                : 'bg-[#090912] text-gray-300 border border-white/10 hover:border-[var(--accent-border)]'
+            }`}
+          >
+            <img src={org.avatarUrl} alt={org.org} className="w-4 h-4 rounded-sm" />
+            <span>{org.org}</span>
+            <span className="opacity-75">({org.pullRequests.length})</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Organization PR Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {filteredOrgs.map((org) => {
+          const isExpanded = !!expandedOrgs[org.org] || selectedOrg !== 'ALL';
+          const visiblePRs = isExpanded ? org.pullRequests : org.pullRequests.slice(0, 3);
+
+          return (
+            <motion.div
+              key={org.org}
+              layout
+              className="nichirin-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between"
+            >
+              <div>
+                {/* Org Header */}
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+                  <a
+                    href={org.orgUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 group"
+                  >
+                    <img
+                      src={org.avatarUrl}
+                      alt={org.org}
+                      className="w-10 h-10 rounded-xl border border-white/15 bg-white/5 p-0.5 group-hover:scale-105 transition-transform"
+                    />
+                    <div>
+                      <h4 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-[var(--accent)] transition-colors flex items-center gap-1.5">
+                        <span>{org.org}</span>
+                        <HiExternalLink className="w-3.5 h-3.5 opacity-60" />
+                      </h4>
+                      <span className="font-mono text-[11px] text-gray-400">
+                        Verified Upstream Maintainer Merges
+                      </span>
+                    </div>
+                  </a>
+
+                  <span className="px-3 py-1 rounded-full bg-[var(--accent-soft)] border border-[var(--accent-border)] text-[var(--accent)] font-mono text-xs font-bold">
+                    {org.pullRequests.length} {org.pullRequests.length === 1 ? 'PR' : 'PRs'}
+                  </span>
+                </div>
+
+                {/* PR List */}
+                <ul className="space-y-2.5">
+                  <AnimatePresence initial={false}>
+                    {visiblePRs.map((pr, idx) => (
+                      <motion.li
+                        key={pr.url || idx}
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        className="group"
+                      >
+                        <a
+                          href={pr.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block p-2.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/5 hover:border-[var(--accent-border)] transition-all"
+                        >
+                          <div className="flex items-start justify-between gap-2">
+                            <span className="text-xs sm:text-sm font-medium text-gray-200 group-hover:text-white line-clamp-1">
+                              {pr.title}
+                            </span>
+                            <span className="shrink-0 font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
+                              MERGED
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between mt-1 text-[11px] font-mono text-gray-400">
+                            <span className="text-[var(--accent-secondary)]">{pr.repo}</span>
+                            <span>
+                              {new Date(pr.mergedAt).toLocaleDateString('en-US', {
+                                month: 'short',
+                                day: 'numeric',
+                                year: 'numeric'
+                              })}
+                            </span>
+                          </div>
+                        </a>
+                      </motion.li>
+                    ))}
+                  </AnimatePresence>
+                </ul>
+              </div>
+
+              {/* Expand / Collapse Button if > 3 PRs */}
+              {org.pullRequests.length > 3 && selectedOrg === 'ALL' && (
+                <button
+                  onClick={() => toggleExpand(org.org)}
+                  className="katana-btn mt-4 w-full py-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 text-xs font-mono text-gray-300 hover:text-white flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  {isExpanded ? (
+                    <>
+                      <span>Collapse</span>
+                      <HiChevronUp className="w-4 h-4 text-[var(--accent)]" />
+                    </>
+                  ) : (
+                    <>
+                      <span>Show All {org.pullRequests.length} Merged PRs</span>
+                      <HiChevronDown className="w-4 h-4 text-[var(--accent)]" />
+                    </>
+                  )}
+                </button>
+              )}
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

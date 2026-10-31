@@ -1,29 +1,264 @@
 @import "tailwindcss";
 @import "./styles/tokens.css";
 
-@theme {
-  --color-orange: var(--color-orange);
-  --color-orange-soft: var(--color-orange-soft);
-  --color-black: var(--color-black);
-  --color-dune: var(--color-dune);
-  --color-white: var(--color-white);
-  --color-off-white: var(--color-off-white);
-  --color-border: var(--color-border);
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    color-scheme: dark;
+  }
 
-  --font-body: var(--font-body);
-  --font-display: var(--font-display);
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-jp {
+    font-family: var(--font-jp);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
 }
 
-body {
-  font-family: var(--font-body);
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
+/* Custom Obsidian Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030305;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent), var(--accent-secondary));
+  border-radius: 9999px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Subtle Japanese Asanoha / Seigaiha Night Grid Pattern */
+.bg-infinity-castle {
+  background-color: #030305;
+  background-image:
+    radial-gradient(circle at 50% 0%, var(--accent-soft) 0%, transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 44px 44px, 44px 44px;
+}
+
+/* Katana Slash Button - Maximalist Interactive Button */
+.katana-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.katana-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -130%;
+  width: 65%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.38),
+    var(--accent),
+    transparent
+  );
+  transform: rotate(28deg);
+  transition: left 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.katana-btn:hover::before {
+  left: 150%;
+}
+
+.katana-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 0 24px -4px var(--accent-glow),
+    0 0 8px 0px var(--accent-soft),
+    inset 0 0 12px var(--accent-soft);
+}
+
+.katana-btn:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* Nichirin Card - Night Black Surface with Breathing Aura */
+.nichirin-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(12, 12, 20, 0.92) 0%, rgba(5, 5, 10, 0.96) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.nichirin-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    500px circle at var(--mouse-x, 50%) var(--mouse-y, 0%),
+    var(--accent-soft),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.nichirin-card:hover {
+  border-color: var(--accent-border);
+  box-shadow:
+    0 14px 40px -12px rgba(0, 0, 0, 0.9),
+    0 0 28px -8px var(--accent-glow);
+}
+
+.nichirin-card:hover::after {
+  opacity: 1;
+}
+
+/* Katana Blade Horizontal Divider */
+.katana-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 20%,
+    var(--accent) 50%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+/* Vertical Japanese Watermark Text */
+.writing-vertical-jp {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.25em;
+}
+
+/* Hanko Red Stamp Seal */
+.hanko-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--font-jp);
+  font-weight: 900;
+  box-shadow: 0 0 14px var(--accent-glow), inset 0 0 8px var(--accent-soft);
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Keyframe Animations */
+@keyframes pulse-aura {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes border-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-aura {
+  animation: pulse-aura 3.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-slow 4.5s ease-in-out infinite;
+}
+
+.text-gradient-breathing {
+  background: linear-gradient(120deg, #ffffff 10%, var(--accent) 55%, var(--accent-secondary) 95%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: border-shimmer 5s ease infinite;
+}
+
+/* Dark Prose inside Article Reader Modal */
+.substack-dark-prose {
+  color: #d1d5db;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+.substack-dark-prose h1,
+.substack-dark-prose h2,
+.substack-dark-prose h3 {
+  color: #ffffff;
   font-family: var(--font-display);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.substack-dark-prose p {
+  margin-bottom: 1.25rem;
+}
+.substack-dark-prose a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.substack-dark-prose img {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1.5rem auto;
+  max-width: 100%;
+  height: auto;
+}
+.substack-dark-prose ul,
+.substack-dark-prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+  list-style-type: disc;
+}
+.substack-dark-prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: #9ca3af;
+  font-style: italic;
+}
+.substack-dark-prose .subscription-widget-wrap-editor,
+.substack-dark-prose .image-link-expand {
+  display: none !important;
 }

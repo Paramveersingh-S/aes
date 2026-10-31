@@ -1,42 +1,53 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const SectionWrapper = ({ id, children, className = '', dark = false }) => {
-  const bgColor = dark ? 'bg-[var(--bg-inverted)]' : 'bg-[var(--bg-primary)]';
-  const textColor = dark ? 'text-[var(--text-inverted)]' : 'text-[var(--text-primary)]';
-
+const SectionWrapper = ({ id, children, className = '', kanjiWatermark = '' }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-      },
-    },
+        staggerChildren: 0.12
+      }
+    }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: { opacity: 0, y: 28 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' },
-    },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+    }
   };
 
   return (
-    <section id={id} className={`w-full py-20 ${bgColor} ${textColor} ${className}`}>
+    <section
+      id={id}
+      className={`relative w-full py-20 md:py-28 bg-infinity-castle text-[var(--text-primary)] overflow-hidden ${className}`}
+    >
+      {/* Subtle Top Katana Divider */}
+      <div className="katana-divider absolute top-0 left-0 right-0 opacity-60" />
+
+      {/* Vertical Japanese Kanji Background Watermark */}
+      {kanjiWatermark && (
+        <div
+          aria-hidden="true"
+          className="hidden xl:block absolute right-6 top-1/2 -translate-y-1/2 writing-vertical-jp font-jp text-7xl font-black text-white/[0.025] select-none pointer-events-none"
+        >
+          {kanjiWatermark}
+        </div>
+      )}
+
       <motion.div
-        className="max-w-5xl mx-auto px-6 md:px-12"
+        className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 md:px-12"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-80px' }}
       >
         {React.Children.map(children, (child) => (
-          <motion.div variants={itemVariants}>
-            {child}
-          </motion.div>
+          <motion.div variants={itemVariants}>{child}</motion.div>
         ))}
       </motion.div>
     </section>

@@ -1,28 +1,28 @@
 import React from 'react';
 
-const ProjectFilterBar = ({ filters, activeFilters, onToggleFilter }) => {
-  if (filters.length === 0) return null;
+const ProjectFilterBar = ({ filters, activeFilter, onSelectFilter }) => {
+  if (!filters || filters.length === 0) return null;
 
   return (
     <div className="flex flex-wrap gap-2 mb-8">
       <button
-        onClick={() => onToggleFilter('All')}
-        className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-          activeFilters.length === 0 
-            ? 'bg-[var(--accent)] text-white' 
-            : 'bg-white text-[var(--text-primary)] border border-[var(--color-border)] hover:bg-[var(--color-off-white)]'
+        onClick={() => onSelectFilter('All')}
+        className={`katana-btn px-4 py-2 rounded-xl text-xs font-mono uppercase tracking-wider cursor-pointer ${
+          activeFilter === 'All'
+            ? 'bg-[var(--accent)] text-black font-bold shadow-[0_0_20px_var(--accent-glow)]'
+            : 'bg-[#090912] text-gray-300 border border-white/10 hover:border-[var(--accent-border)]'
         }`}
       >
-        All
+        ALL TECHNIQUES // 全て
       </button>
       {filters.map((filter) => (
         <button
           key={filter}
-          onClick={() => onToggleFilter(filter)}
-          className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-            activeFilters.includes(filter)
-              ? 'bg-[var(--accent)] text-white'
-              : 'bg-white text-[var(--text-primary)] border border-[var(--color-border)] hover:bg-[var(--color-off-white)]'
+          onClick={() => onSelectFilter(filter)}
+          className={`katana-btn px-4 py-2 rounded-xl text-xs font-mono uppercase tracking-wider cursor-pointer ${
+            activeFilter === filter
+              ? 'bg-[var(--accent)] text-black font-bold shadow-[0_0_20px_var(--accent-glow)]'
+              : 'bg-[#090912] text-gray-300 border border-white/10 hover:border-[var(--accent-border)]'
           }`}
         >
           {filter}

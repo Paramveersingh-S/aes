@@ -1,103 +1,228 @@
 import React, { createContext, useContext, useState } from 'react';
 
-const LanguageContext = createContext();
-
 const translations = {
   en: {
-    nav_home: "Home",
-    nav_about: "About",
-    nav_resume: "Resume",
-    nav_projects: "Projects",
-    nav_articles: "Articles",
-    hero_view_work: "View Work",
-    hero_read_articles: "Read Articles",
-    hero_greeting: "Hi, I'm",
-    hero_role: "Machine Learning & Backend Engineer.",
-    about_title: "About Me",
-    about_public_repos: "Public Repos",
-    about_stars: "Stars Received",
-    about_currently: "Currently focused on:",
-    about_tech_stack: "Tech Stack",
-    about_achievements: "Achievements & Publications",
-    about_competitions: "Competitions & Recognition",
-    about_research: "Research & Academia",
-    about_internships: "Internships",
-    oss_title: "Open Source Contributions",
-    oss_merged: "Merged PRs",
-    oss_heatmap: "Activity Heatmap",
-    projects_title: "Projects & Repositories",
-    projects_desc: "A selection of my open-source work, featured repositories, and personal projects.",
-    articles_title: "Latest Articles",
-    resume_download: "Download Resume",
-    footer_built_with: "Built with React & Vite."
+    nav: {
+      home: 'Home',
+      about: 'Chronicles',
+      tech: 'Arsenal',
+      projects: 'Techniques',
+      writing: 'Scrolls',
+      resume: 'Dossier'
+    },
+    hero: {
+      scroll: 'TOTAL CONCENTRATION // SCROLL',
+      greeting: 'Paramveer Singh',
+      subtitle: 'Systems, Cloud & AI Infrastructure Engineer',
+      exploreWorks: 'Unleash Techniques',
+      viewDossier: 'Inspect Dossier'
+    },
+    about: {
+      title: 'The Hashira Chronicle',
+      ossTitle: 'Corps Alliances & Open Source',
+      prsMerged: 'Merged PRs across Global Organizations',
+      viewAllGh: 'Inspect All on GitHub',
+      heatmapTitle: 'Daily Blade Forging & Streak Telemetry',
+      heatmapSub: 'Continuous commits, daily streak metrics, and contribution snake across systems & AI repositories.',
+      compTitle: 'Battle Honors',
+      expTitle: 'Field Campaigns',
+      pubTitle: 'Sacred Scrolls (Publications)'
+    },
+    tech: {
+      title: 'Nichirin Arsenal',
+      subtitle: 'Languages, bare-metal kernels, and cloud infrastructure forged in production.'
+    },
+    projects: {
+      title: 'Blood & Steel Techniques',
+      subtitle: 'High-throughput distributed systems, AWS Terraform architectures, and custom CUDA kernels.',
+      viewAll: 'View All',
+      ReposOnGh: 'Repositories on GitHub'
+    },
+    writing: {
+      title: 'ML Blueprints // Scrolls',
+      subtitle: 'Deep technical dissections on multi-agent orchestration, GPU kernels, and AI systems.',
+      readMore: 'Unseal Scroll',
+      readAllSubstack: 'Read All on Substack'
+    },
+    resume: {
+      title: 'Official Corps Dossier',
+      download: 'Download PDF',
+      openTab: 'Open Fullscreen'
+    }
   },
-  fr: {
-    nav_home: "Accueil",
-    nav_about: "À propos",
-    nav_resume: "CV",
-    nav_projects: "Projets",
-    nav_articles: "Articles",
-    hero_view_work: "Voir le travail",
-    hero_read_articles: "Lire les articles",
-    hero_greeting: "Salut, je suis",
-    hero_role: "Ingénieur Backend & Machine Learning.",
-    about_title: "À propos de moi",
-    about_public_repos: "Dépôts publics",
-    about_stars: "Étoiles reçues",
-    about_currently: "Actuellement concentré sur:",
-    about_tech_stack: "Pile technologique",
-    about_achievements: "Réalisations et publications",
-    about_competitions: "Compétitions et reconnaissances",
-    about_research: "Recherche et monde universitaire",
-    about_internships: "Stages",
-    oss_title: "Contributions Open Source",
-    oss_merged: "PR fusionnées",
-    oss_heatmap: "Carte d'activité",
-    projects_title: "Projets et dépôts",
-    projects_desc: "Une sélection de mes travaux open source, dépôts en vedette et projets personnels.",
-    articles_title: "Derniers articles",
-    resume_download: "Télécharger le CV",
-    footer_built_with: "Créé avec React et Vite."
+  ja: {
+    nav: {
+      home: '壱・序章',
+      about: '弐・経歴',
+      tech: '参・日輪刀',
+      projects: '肆・血気術',
+      writing: '伍・巻物',
+      resume: '陸・履歴書'
+    },
+    hero: {
+      scroll: '全集中・常中 // スクロール',
+      greeting: 'Paramveer Singh',
+      subtitle: '分散システム・クラウド・AI基盤エンジニア',
+      exploreWorks: '技術・作品を見る',
+      viewDossier: '履歴書を閲覧'
+    },
+    about: {
+      title: '柱の記録 // 実績と経歴',
+      ossTitle: 'オープンソース貢献 (OSS)',
+      prsMerged: '件のプルリクエストが国際組織にマージ済',
+      viewAllGh: 'GitHubで全て見る',
+      heatmapTitle: '日々の鍛錬 // GitHubストリークと活動記録',
+      heatmapSub: '毎日のコミット記録、連続ストリーク、コントリビューション・スネーク',
+      compTitle: '受賞・大会実績',
+      expTitle: '実務・研究経歴',
+      pubTitle: '学術論文・出版'
+    },
+    tech: {
+      title: '日輪の武器庫 // 技術スタック',
+      subtitle: 'Go・Rust・C++・CUDA・AWS・Terraformによる超高速システム構築',
+      },
+    projects: {
+      title: '肆ノ型 // 主要プロジェクト',
+      subtitle: 'サブ10ミリ秒の分散ゲートウェイ、サーバーレス基盤、CUDAカーネル',
+      viewAll: '全',
+      ReposOnGh: '件のリポジトリをGitHubで見る'
+    },
+    writing: {
+      title: '伍ノ型 // 技術論考 (Substack)',
+      subtitle: 'マルチエージェントAI、GPU最適化、分散システムに関する技術エッセイ',
+      readMore: '巻物を読む',
+      readAllSubstack: 'Substackで全て読む'
+    },
+    resume: {
+      title: '公式履歴書 (CV)',
+      download: 'PDFを保存',
+      openTab: '別タブで開く'
+    }
   },
   de: {
-    nav_home: "Startseite",
-    nav_about: "Über mich",
-    nav_resume: "Lebenslauf",
-    nav_projects: "Projekte",
-    nav_articles: "Artikel",
-    hero_view_work: "Arbeit ansehen",
-    hero_read_articles: "Artikel lesen",
-    hero_greeting: "Hallo, ich bin",
-    hero_role: "Machine Learning & Backend Engineer.",
-    about_title: "Über mich",
-    about_public_repos: "Öffentliche Repos",
-    about_stars: "Sterne erhalten",
-    about_currently: "Derzeit konzentriert auf:",
-    about_tech_stack: "Technologie-Stack",
-    about_achievements: "Leistungen und Veröffentlichungen",
-    about_competitions: "Wettbewerbe und Anerkennungen",
-    about_research: "Forschung & Wissenschaft",
-    about_internships: "Praktika",
-    oss_title: "Open-Source-Beiträge",
-    oss_merged: "Zusammengeführte PRs",
-    oss_heatmap: "Aktivitäts-Heatmap",
-    projects_title: "Projekte & Repositories",
-    projects_desc: "Eine Auswahl meiner Open-Source-Arbeit, vorgestellte Repositories und persönliche Projekte.",
-    articles_title: "Neueste Artikel",
-    resume_download: "Lebenslauf herunterladen",
-    footer_built_with: "Erstellt mit React & Vite."
+    nav: {
+      home: 'Start',
+      about: 'Chronik',
+      tech: 'Arsenal',
+      projects: 'Systeme',
+      writing: 'Artikel',
+      resume: 'Lebenslauf'
+    },
+    hero: {
+      scroll: 'KONZENTRATION // SCROLLEN',
+      greeting: 'Paramveer Singh',
+      subtitle: 'Systems, Cloud & AI Infrastructure Engineer',
+      exploreWorks: 'Projekte ansehen',
+      viewDossier: 'Lebenslauf'
+    },
+    about: {
+      title: 'Ingenieur-Chronik',
+      ossTitle: 'Open-Source-Beiträge',
+      prsMerged: 'Zusammengeführte PRs weltweit',
+      viewAllGh: 'Alle auf GitHub',
+      heatmapTitle: 'GitHub Streak & Aktivität',
+      heatmapSub: 'Tägliche Commits, Streak-Statistiken und Beitrags-Matrix.',
+      compTitle: 'Auszeichnungen',
+      expTitle: 'Erfahrung',
+      pubTitle: 'Publikationen'
+    },
+    tech: {
+      title: 'Technologie-Arsenal',
+      subtitle: 'Sprachen, GPU-Kernels und Cloud-Infrastruktur.'
+    },
+    projects: {
+      title: 'Ausgewählte Systeme',
+      subtitle: 'Verteilte Systeme, Cloud-Architektur und CUDA-Kernels.',
+      viewAll: 'Alle',
+      ReposOnGh: 'Repositories auf GitHub'
+    },
+    writing: {
+      title: 'Technische Schriften',
+      subtitle: 'Tiefgehende Analysen zu KI-Systemen und Infrastruktur.',
+      readMore: 'Artikel lesen',
+      readAllSubstack: 'Auf Substack lesen'
+    },
+    resume: {
+      title: 'Lebenslauf (CV)',
+      download: 'PDF herunterladen',
+      openTab: 'Im neuen Tab öffnen'
+    }
+  },
+  fr: {
+    nav: {
+      home: 'Accueil',
+      about: 'Chronique',
+      tech: 'Arsenal',
+      projects: 'Projets',
+      writing: 'Articles',
+      resume: 'CV'
+    },
+    hero: {
+      scroll: 'CONCENTRATION // DÉFILER',
+      greeting: 'Paramveer Singh',
+      subtitle: 'Ingénieur Systèmes, Cloud & IA',
+      exploreWorks: 'Explorer les Projets',
+      viewDossier: 'Voir le CV'
+    },
+    about: {
+      title: 'Chronique de l’Ingénieur',
+      ossTitle: 'Contributions Open Source',
+      prsMerged: 'PRs fusionnées à l’international',
+      viewAllGh: 'Tout voir sur GitHub',
+      heatmapTitle: 'Série Quotidienne & Activité GitHub',
+      heatmapSub: 'Commits quotidiens, statistiques de série et matrice de contributions.',
+      compTitle: 'Distinctions',
+      expTitle: 'Expérience',
+      pubTitle: 'Publications'
+    },
+    tech: {
+      title: 'Arsenal Technologique',
+      subtitle: 'Langages, noyaux GPU et infrastructure Cloud.'
+    },
+    projects: {
+      title: 'Systèmes & Projets',
+      subtitle: 'Systèmes distribués haute performance, Cloud AWS et CUDA.',
+      viewAll: 'Voir les',
+      ReposOnGh: 'dépôts sur GitHub'
+    },
+    writing: {
+      title: 'Écrits Techniques',
+      subtitle: 'Analyses approfondies sur l’orchestration multi-agents et les GPU.',
+      readMore: 'Lire l’article',
+      readAllSubstack: 'Lire sur Substack'
+    },
+    resume: {
+      title: 'Curriculum Vitae',
+      download: 'Télécharger PDF',
+      openTab: 'Ouvrir dans un nouvel onglet'
+    }
   }
 };
 
+const LanguageContext = createContext();
+
 export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState('en');
+  const [language, setLanguage] = useState('en');
 
   const t = (key) => {
-    return translations[lang][key] || translations['en'][key] || key;
+    const keys = key.split('.');
+    let value = translations[language];
+    for (const k of keys) {
+      if (value && value[k]) {
+        value = value[k];
+      } else {
+        let fallback = translations['en'];
+        for (const fk of keys) {
+          fallback = fallback ? fallback[fk] : key;
+        }
+        return fallback;
+      }
+    }
+    return value;
   };
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

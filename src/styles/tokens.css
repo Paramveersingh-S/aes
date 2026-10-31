@@ -1,38 +1,69 @@
-@import '@fontsource/roboto';
-@import '@fontsource/spectral';
+:root,
+html.dark {
+  /* Night Black & Obsidian Void Palette */
+  --bg-void: #020204;
+  --bg-primary: #050508;
+  --bg-secondary: #08080e;
+  --bg-elevated: #0c0c14;
+  --bg-card: rgba(11, 11, 18, 0.82);
+  --bg-card-hover: rgba(17, 17, 28, 0.95);
+  --bg-inverted: #030306;
 
-:root {
-  /* Core Substack palette */
-  --color-orange: #FF6719;       /* primary accent, CTAs, links-on-dark, icons */
-  --color-orange-soft: #FFE4D2;  /* light tint for hover/backgrounds */
-  --color-black: #17140F;        /* true content black, deeper than Substack's Dune for our dark hero */
-  --color-dune: #2B2823;         /* Substack's own "black" — use for body text on white */
-  --color-white: #FFFFFF;
-  --color-off-white: #FAF9F7;    /* section background alternation */
-  --color-border: rgba(43,40,35,0.12);
+  /* Text Hierarchy */
+  --text-primary: #f4f4f8;
+  --text-secondary: #9ca3af;
+  --text-muted: #64748b;
+  --text-inverted: #f4f4f8;
 
-  /* Semantic */
-  --bg-primary: var(--color-white);
-  --bg-inverted: var(--color-black);
-  --text-primary: var(--color-dune);
-  --text-inverted: var(--color-white);
-  --accent: var(--color-orange);
+  /* Default Breathing Style: Hinokami Kagura (Sun/Flame Crimson & Gold) */
+  --accent: #ff2a54;
+  --accent-secondary: #f59e0b;
+  --accent-tertiary: #00f0ff;
+  --accent-glow: rgba(255, 42, 84, 0.42);
+  --accent-soft: rgba(255, 42, 84, 0.12);
+  --accent-border: rgba(255, 42, 84, 0.35);
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 42, 84, 0.45);
+  --color-off-white: #0d0d16;
 
   /* Typography */
-  --font-body: 'Roboto', system-ui, sans-serif;
-  --font-display: 'Spectral', Georgia, serif;
+  --font-display: 'Cinzel', 'Noto Serif JP', serif;
+  --font-jp: 'Noto Serif JP', serif;
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
-html.dark {
-  --color-white: #1a1a1a;
-  --color-black: #ffffff;
-  --color-off-white: #242424;
-  --color-dune: #f5f5f5;
-  --color-border: rgba(255,255,255,0.15);
-  
-  --bg-primary: #121212;
-  --bg-inverted: #f5f5f5;
-  --text-primary: #e0e0e0;
-  --text-inverted: #121212;
-  --color-orange-soft: #3a2212;
+/* Water Breathing (Mizu no Kokyu) */
+html[data-breathing="water"] {
+  --accent: #00f0ff;
+  --accent-secondary: #3b82f6;
+  --accent-tertiary: #38bdf8;
+  --accent-glow: rgba(0, 240, 255, 0.42);
+  --accent-soft: rgba(0, 240, 255, 0.12);
+  --accent-border: rgba(0, 240, 255, 0.38);
+  --color-border-strong: rgba(0, 240, 255, 0.45);
+}
+
+/* Thunder Breathing (Kaminari no Kokyu) */
+html[data-breathing="thunder"] {
+  --accent: #facc15;
+  --accent-secondary: #38bdf8;
+  --accent-tertiary: #f59e0b;
+  --accent-glow: rgba(250, 204, 21, 0.42);
+  --accent-soft: rgba(250, 204, 21, 0.12);
+  --accent-border: rgba(250, 204, 21, 0.38);
+  --color-border-strong: rgba(250, 204, 21, 0.45);
+}
+
+/* Moon / Wisteria Breathing (Tsuki no Kokyu) */
+html[data-breathing="moon"] {
+  --accent: #c084fc;
+  --accent-secondary: #ff2a54;
+  --accent-tertiary: #e879f9;
+  --accent-glow: rgba(192, 132, 252, 0.42);
+  --accent-soft: rgba(192, 132, 252, 0.12);
+  --accent-border: rgba(192, 132, 252, 0.38);
+  --color-border-strong: rgba(192, 132, 252, 0.45);
 }

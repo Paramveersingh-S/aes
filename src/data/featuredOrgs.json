@@ -1,6 +1,10 @@
 [
-  "CERN",
-  "Deepmind",
-  "supermemory",
-  "CERN-HSF"
+  { "name": "vLLM Project", "logo": "https://github.com/vllm-project.png", "url": "https://github.com/vllm-project", "prs": "11 PRs" },
+  { "name": "CERN", "logo": "https://github.com/CERN.png", "url": "https://github.com/CERN", "prs": "12 PRs" },
+  { "name": "Unikraft", "logo": "https://github.com/unikraft.png", "url": "https://github.com/unikraft", "prs": "8 PRs" },
+  { "name": "Google DeepMind", "logo": "https://github.com/google-deepmind.png", "url": "https://github.com/google-deepmind", "prs": "3 PRs" },
+  { "name": "CNCF Meshery", "logo": "https://github.com/meshery.png", "url": "https://github.com/meshery", "prs": "1 PR" },
+  { "name": "Scikit-HEP", "logo": "https://github.com/scikit-hep.png", "url": "https://github.com/scikit-hep", "prs": "4 PRs" },
+  { "name": "Cambridge CIA", "logo": "https://github.com/CambridgeCIA.png", "url": "https://github.com/CambridgeCIA", "prs": "2 PRs" },
+  { "name": "Google Research", "logo": "https://github.com/google-research.png", "url": "https://github.com/google-research", "prs": "1 PR" }
 ]

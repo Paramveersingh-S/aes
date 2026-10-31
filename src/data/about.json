@@ -1,23 +1,109 @@
 {
-  "tagline": "Machine Learning | Embedded Software | Cyber Security | Kernel Programming",
-  "currentlyBuilding": "Scalable Full-Stack Architectures & Deep Tech Solutions",
-  "bullets": [
-    "Interested in Machine Learning, Embedded Software, Cyber Security, and Kernel Programming.",
-    "Open to collaboration and research paper analysis."
+  "name": "Paramveer Singh",
+  "kanjiName": "パラムヴィール・シン",
+  "rankTitle": "HASHIRA // SYSTEMS, CLOUD & AI INFRASTRUCTURE",
+  "tagline": "Architecting sub-10ms distributed backends, cloud-native DevSecOps, and bare-metal GPU kernels.",
+  "bio": "Systems & AI Infrastructure Engineer with 55+ merged open-source PRs across vLLM, CERN, Unikraft, Google DeepMind, and CNCF Meshery. Ranked #1 globally among 2,000 participants at the University of Tokyo Matsuo-Iwasawa Lab.",
+  "stats": [
+    { "label": "Merged OSS PRs", "value": "55+", "kanji": "貢献", "sub": "42 External Orgs" },
+    { "label": "U-Tokyo Global Rank", "value": "#1", "kanji": "首席", "sub": "Top 0.05% of 2,000" },
+    { "label": "Gateway Throughput", "value": "5K+", "kanji": "速度", "sub": "RPS @ <10ms p50" },
+    { "label": "GPU Kernel Speedup", "value": "14.0x", "kanji": "極限", "sub": "87.5% Tensor Core" }
   ],
-  "achievements": [
-    "NASA Space Apps Challenge — Global Nominee & Regional Winner (out of 18,868+ teams)",
-    "GirlScript Summer of Code (GSSoC) — Selected AI/ML & open-source contributor",
-    "IPD EXPO 2025 — 1st place among 30+ projects",
-    "AI Hack Matrix 2026 — Finalist (300+ teams)",
-    "India Innovates — National Finalist (35,000+ entries)"
+  "competitions": [
+    {
+      "title": "Ranked #1 Globally — Matsuo-Iwasawa Lab AI Competition",
+      "organization": "University of Tokyo (U-Tokyo)",
+      "date": "2026",
+      "badge": "RANK #1 / 2,000",
+      "description": "Awarded Extraordinary & Honours Rank (#1 among 2,000 global participants) in deep learning systems."
+    },
+    {
+      "title": "Global Nominee — NASA International Space Apps Challenge",
+      "organization": "NASA",
+      "date": "Oct 2024",
+      "badge": "TOP 2% GLOBALLY",
+      "description": "Selected from 90,000+ participants for real-time 3D orbital debris tracking and seismic telemetry."
+    },
+    {
+      "title": "National Finalist — India Innovates 2026 (Bharat Mandapam)",
+      "organization": "Govt. of India",
+      "date": "Mar 2026",
+      "badge": "NATIONAL FINALIST",
+      "description": "Demonstrated Cortexion real-time EEG motor-imagery Brain-Computer Interface (<45ms latency)."
+    },
+    {
+      "title": "1st Position — Innovative Product Design Expo",
+      "organization": "NIT Jalandhar",
+      "date": "Nov 2023",
+      "badge": "1ST PLACE",
+      "description": "First prize among 50+ engineering teams for embedded hardware-software telemetry architecture."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Open Source Developer (Data Plane & Networking WG)",
+      "organization": "vLLM Project (semantic-router & AIBrix)",
+      "period": "Oct 2026 – Present",
+      "badge": "11 MERGED PRs",
+      "metrics": ["Go", "Rust", "Python", "Valkey", "Kubernetes"],
+      "description": "Cut TTFT streaming latency via immediate delta decoding (#4911), made Valkey cache tracking atomic (#4891), preserved Anthropic cache tiers (#4939), and shrank AIBrix K8s images (#2863)."
+    },
+    {
+      "role": "AI Researcher (Honours & Extraordinary Rank)",
+      "organization": "Matsuo-Iwasawa Lab, University of Tokyo",
+      "period": "Sep 2026 – Present",
+      "badge": "RANK #1 / 2000",
+      "metrics": ["PyTorch", "Deep Learning", "Tokyo, Japan (Remote)"],
+      "description": "Ranked #1 globally among 2,000 researchers in internal competition; engineered high-efficiency neural inference architectures."
+    },
+    {
+      "role": "Open Source Developer (3D Rendering & CT Reconstruction)",
+      "organization": "CERN (OpenPHIGS & TIGRE) & Scikit-HEP",
+      "period": "Jun 2026 – Oct 2026",
+      "badge": "16 MERGED PRs",
+      "metrics": ["C/C++", "CUDA", "OpenGL/EGL", "AddressSanitizer"],
+      "description": "Built headless EGL rendering & glTF 2.0 3D export for LEP-era particle detectors (DELPHI/OPAL), integrated ASan/UBSan CI, and resolved CUDA ray-voxel stripe artifacts."
+    },
+    {
+      "role": "Open Source Systems Contributor",
+      "organization": "Unikraft (KraftKit), CNCF Meshery & Google DeepMind",
+      "period": "Jul 2026 – Oct 2026",
+      "badge": "12 MERGED PRs",
+      "metrics": ["Go", "Lean 4", "JAX", "Kubernetes CRDs"],
+      "description": "Hardened KraftKit unikernel CLI lifecycle & test suites in Go (8 PRs), refined CNCF Meshery Operator CRD docs, and contributed to DeepMind Torax & Formal Conjectures."
+    },
+    {
+      "role": "Research Intern — Hardware Cryptography & Firmware",
+      "organization": "Bharat Electronics Limited (BEL)",
+      "period": "Jun 2025 – Jul 2025",
+      "badge": "NIST SP 800-22",
+      "metrics": ["C", "STM32", "SHA-256", "AES-128"],
+      "description": "Built bare-metal Chaotic Map TRNG and real-time SHA-256/AES-128 encryption pipeline on STM32 Cortex-M4 passing all 15 NIST statistical randomness suites."
+    },
+    {
+      "role": "Research Intern — Medical Robotics & Embedded Systems",
+      "organization": "CSIR-CSIO & Yamada Automation",
+      "period": "Jan 2024 – Jul 2024",
+      "badge": "<5ms LATENCY",
+      "metrics": ["FreeRTOS", "C++", "STM32", "CAN/MODBUS"],
+      "description": "Developed multi-DOF myoelectric prosthetic control on FreeRTOS with 92% gesture accuracy and <5ms actuator latency."
+    }
   ],
   "publications": [
-    "IEEE-ICSPED Conference paper: 'CHRONOS: A Chaos-Harnessed TRNG for Neural Initialization and Secure Key Synthesis'",
-    "Springer Journal (accepted): 'AI Driven Sanskrit Character Recognition and Translating to Text and Audio Formats: A Step Towards IKS Revival'"
-  ],
-  "internships": [
-    "Software Development Intern @ CSIR-CSIO",
-    "Manufacturing/Automation Intern @ Yamada Automation"
+    {
+      "title": "CHRONOS: Coupled Hyperchaotic Nonlinear Oscillator System for True Random Number Generation",
+      "venue": "IEEE International Conference",
+      "status": "Accepted (2025)",
+      "badge": "IEEE PAPER",
+      "description": "Hardware-efficient hyperchaotic entropy source achieving 0.9998 bits/byte Shannon entropy and passing NIST SP 800-22 & Dieharder suites."
+    },
+    {
+      "title": "Deep Learning Architectures for Sanskrit Phoneme Recognition and Paninian Grammar Parsing",
+      "venue": "Springer Nature Book Series",
+      "status": "In Press (2025)",
+      "badge": "SPRINGER CHAPTER",
+      "description": "Transformer acoustic-phonetic modeling for low-resource Vedic and Classical Sanskrit corpora, reducing phoneme error rate by 18.4%."
+    }
   ]
 }

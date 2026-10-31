@@ -1,11 +1,35 @@
 {
-  "totalMergedPRs": 15,
+  "totalMergedPRs": 42,
   "organizations": [
     {
       "org": "CERN",
       "orgUrl": "https://github.com/CERN",
       "avatarUrl": "https://github.com/CERN.png",
       "pullRequests": [
+        {
+          "title": "feat: introduce glTF 3D scene export and headless EGL rendering backend",
+          "repo": "CERN/OpenPHIGS",
+          "url": "https://github.com/CERN/OpenPHIGS/pull/54",
+          "mergedAt": "2026-09-05T15:01:30Z"
+        },
+        {
+          "title": "Chore/infra ci asan docs",
+          "repo": "CERN/OpenPHIGS",
+          "url": "https://github.com/CERN/OpenPHIGS/pull/53",
+          "mergedAt": "2026-08-21T09:42:16Z"
+        },
+        {
+          "title": "Feat/bindings refactor v2",
+          "repo": "CERN/OpenPHIGS",
+          "url": "https://github.com/CERN/OpenPHIGS/pull/51",
+          "mergedAt": "2026-08-09T15:08:49Z"
+        },
+        {
+          "title": "chore: add missing license headers to tessellation files",
+          "repo": "CERN/OpenPHIGS",
+          "url": "https://github.com/CERN/OpenPHIGS/pull/43",
+          "mergedAt": "2026-07-27T13:12:39Z"
+        },
         {
           "title": "Fix tessellation artifacts",
           "repo": "CERN/OpenPHIGS",
@@ -57,6 +81,134 @@
       ]
     },
     {
+      "org": "vllm-project",
+      "orgUrl": "https://github.com/vllm-project",
+      "avatarUrl": "https://github.com/vllm-project.png",
+      "pullRequests": [
+        {
+          "title": "[Bug] Add platform guards for fcntl and Windows locking in CLI (#5093)",
+          "repo": "vllm-project/semantic-router",
+          "url": "https://github.com/vllm-project/semantic-router/pull/5182",
+          "mergedAt": "2026-10-17T12:46:02Z"
+        },
+        {
+          "title": "[Bug] Add Python 3.10 hashlib.file_digest fallback across harness and training",
+          "repo": "vllm-project/semantic-router",
+          "url": "https://github.com/vllm-project/semantic-router/pull/5054",
+          "mergedAt": "2026-10-16T14:53:27Z"
+        },
+        {
+          "title": "[Feature] Preserve Anthropic cache-write tiers through settlement and pricing",
+          "repo": "vllm-project/semantic-router",
+          "url": "https://github.com/vllm-project/semantic-router/pull/4939",
+          "mergedAt": "2026-10-15T14:54:52Z"
+        },
+        {
+          "title": "[Bug] Decode Chat target opening delta immediately without holding (#4911)",
+          "repo": "vllm-project/semantic-router",
+          "url": "https://github.com/vllm-project/semantic-router/pull/4931",
+          "mergedAt": "2026-10-13T00:14:38Z"
+        },
+        {
+          "title": "[Bug] Report specific diagnosis when Memory API store is unavailable",
+          "repo": "vllm-project/semantic-router",
+          "url": "https://github.com/vllm-project/semantic-router/pull/4894",
+          "mergedAt": "2026-10-12T16:00:51Z"
+        },
+        {
+          "title": "[Bug] Perform Valkey memory access tracking atomically without resurrecting deleted keys",
+          "repo": "vllm-project/semantic-router",
+          "url": "https://github.com/vllm-project/semantic-router/pull/4891",
+          "mergedAt": "2026-10-16T12:12:06Z"
+        },
+        {
+          "title": "[Bug] Require fresh model cards during runtime recovery and clear stale metadata",
+          "repo": "vllm-project/semantic-router",
+          "url": "https://github.com/vllm-project/semantic-router/pull/4867",
+          "mergedAt": "2026-10-11T18:39:29Z"
+        },
+        {
+          "title": "[Bug] Enforce authorized max-age request control on semantic cache reads",
+          "repo": "vllm-project/semantic-router",
+          "url": "https://github.com/vllm-project/semantic-router/pull/4848",
+          "mergedAt": "2026-10-11T13:40:24Z"
+        },
+        {
+          "title": "[Docs] Add agent-routing-protection benchmarking page to sidebars",
+          "repo": "vllm-project/semantic-router",
+          "url": "https://github.com/vllm-project/semantic-router/pull/4847",
+          "mergedAt": "2026-10-11T13:12:35Z"
+        },
+        {
+          "title": "[Bug] Accept Mistral's p field on streamed Chat chunks",
+          "repo": "vllm-project/semantic-router",
+          "url": "https://github.com/vllm-project/semantic-router/pull/4818",
+          "mergedAt": "2026-10-11T14:00:07Z"
+        },
+        {
+          "title": "fix: separate GPU optimizer deps to reduce runtime image size (#2863)",
+          "repo": "vllm-project/aibrix",
+          "url": "https://github.com/vllm-project/aibrix/pull/2872",
+          "mergedAt": "2026-10-08T23:42:38Z"
+        }
+      ]
+    },
+    {
+      "org": "unikraft",
+      "orgUrl": "https://github.com/unikraft",
+      "avatarUrl": "https://github.com/unikraft.png",
+      "pullRequests": [
+        {
+          "title": "test(cli/stop): Fix --all usage description and add unit tests",
+          "repo": "unikraft/kraftkit",
+          "url": "https://github.com/unikraft/kraftkit/pull/2953",
+          "mergedAt": "2026-10-26T12:50:13Z"
+        },
+        {
+          "title": "test(cli/pause): Add unit tests for root pause command",
+          "repo": "unikraft/kraftkit",
+          "url": "https://github.com/unikraft/kraftkit/pull/2952",
+          "mergedAt": "2026-10-26T12:50:25Z"
+        },
+        {
+          "title": "test(cli/version): Add unit tests for root version command",
+          "repo": "unikraft/kraftkit",
+          "url": "https://github.com/unikraft/kraftkit/pull/2951",
+          "mergedAt": "2026-10-26T08:20:05Z"
+        },
+        {
+          "title": "test(cli/net): Add unit tests for root net command",
+          "repo": "unikraft/kraftkit",
+          "url": "https://github.com/unikraft/kraftkit/pull/2950",
+          "mergedAt": "2026-10-26T08:20:25Z"
+        },
+        {
+          "title": "test(cli/pkg): Add unit tests for root pkg command",
+          "repo": "unikraft/kraftkit",
+          "url": "https://github.com/unikraft/kraftkit/pull/2949",
+          "mergedAt": "2026-10-26T12:50:02Z"
+        },
+        {
+          "title": "test(cli/pkg/pull): Add unit tests for platform flag validation",
+          "repo": "unikraft/kraftkit",
+          "url": "https://github.com/unikraft/kraftkit/pull/2948",
+          "mergedAt": "2026-10-26T08:20:08Z"
+        },
+        {
+          "title": "refactor(cli): Migrate set and unset errors to constants",
+          "repo": "unikraft/kraftkit",
+          "url": "https://github.com/unikraft/kraftkit/pull/2947",
+          "mergedAt": "2026-10-26T08:19:54Z"
+        },
+        {
+          "title": "fix(cli/remove): Handle empty machine inventory gracefully on --all",
+          "repo": "unikraft/kraftkit",
+          "url": "https://github.com/unikraft/kraftkit/pull/2946",
+          "mergedAt": "2026-10-26T12:49:51Z"
+        }
+      ]
+    },
+    {
       "org": "CambridgeCIA",
       "orgUrl": "https://github.com/CambridgeCIA",
       "avatarUrl": "https://github.com/CambridgeCIA.png",
@@ -76,6 +228,57 @@
       ]
     },
     {
+      "org": "scikit-hep",
+      "orgUrl": "https://github.com/scikit-hep",
+      "avatarUrl": "https://github.com/scikit-hep.png",
+      "pullRequests": [
+        {
+          "title": "fix: avoid std::any in pyroot_to_buffer to support older ROOT versions",
+          "repo": "scikit-hep/uproot5",
+          "url": "https://github.com/scikit-hep/uproot5/pull/1667",
+          "mergedAt": "2026-07-02T14:50:17Z"
+        },
+        {
+          "title": "feat: add type annotations to five array operations",
+          "repo": "scikit-hep/awkward",
+          "url": "https://github.com/scikit-hep/awkward/pull/4150",
+          "mergedAt": "2026-10-08T13:52:55Z"
+        }
+      ]
+    },
+    {
+      "org": "hsf-training",
+      "orgUrl": "https://github.com/hsf-training",
+      "avatarUrl": "https://github.com/hsf-training.png",
+      "pullRequests": [
+        {
+          "title": "feat: Add End-to-End Scikit-HEP Analysis Pipeline Tutorial",
+          "repo": "hsf-training/hsf-training-scikit-hep-webpage",
+          "url": "https://github.com/hsf-training/hsf-training-scikit-hep-webpage/pull/96",
+          "mergedAt": "2026-10-09T15:57:00Z"
+        },
+        {
+          "title": "docs: Mention that root_numpy and root_pandas are deprecated",
+          "repo": "hsf-training/hsf-training-scikit-hep-webpage",
+          "url": "https://github.com/hsf-training/hsf-training-scikit-hep-webpage/pull/95",
+          "mergedAt": "2026-06-23T14:36:25Z"
+        }
+      ]
+    },
+    {
+      "org": "meshery",
+      "orgUrl": "https://github.com/meshery",
+      "avatarUrl": "https://github.com/meshery.png",
+      "pullRequests": [
+        {
+          "title": "[Docs] Fix typos, missing words, and duplicate tokens in Workspaces and Operator CRDs guides",
+          "repo": "meshery/meshery",
+          "url": "https://github.com/meshery/meshery/pull/22300",
+          "mergedAt": "2026-10-24T17:27:42Z"
+        }
+      ]
+    },
+    {
       "org": "supermemoryai",
       "orgUrl": "https://github.com/supermemoryai",
       "avatarUrl": "https://github.com/supermemoryai.png",
@@ -89,6 +292,19 @@
       ]
     },
     {
+      "org": "google-research",
+      "orgUrl": "https://github.com/google-research",
+      "avatarUrl": "https://github.com/google-research.png",
+      "pullRequests": [
+        {
+          "title": "Fix #27: Align PyTorch TabFM max_classes default with checkpoint config",
+          "repo": "google-research/tabfm",
+          "url": "https://github.com/google-research/tabfm/pull/50",
+          "mergedAt": "2026-07-24T15:14:43Z"
+        }
+      ]
+    },
+    {
       "org": "fossunited",
       "orgUrl": "https://github.com/fossunited",
       "avatarUrl": "https://github.com/fossunited.png",
@@ -98,32 +314,6 @@
           "repo": "fossunited/fossunited",
           "url": "https://github.com/fossunited/fossunited/pull/1631",
           "mergedAt": "2026-07-10T10:37:41Z"
-        }
-      ]
-    },
-    {
-      "org": "scikit-hep",
-      "orgUrl": "https://github.com/scikit-hep",
-      "avatarUrl": "https://github.com/scikit-hep.png",
-      "pullRequests": [
-        {
-          "title": "fix: avoid std::any in pyroot_to_buffer to support older ROOT versions",
-          "repo": "scikit-hep/uproot5",
-          "url": "https://github.com/scikit-hep/uproot5/pull/1667",
-          "mergedAt": "2026-07-02T14:50:17Z"
-        }
-      ]
-    },
-    {
-      "org": "hsf-training",
-      "orgUrl": "https://github.com/hsf-training",
-      "avatarUrl": "https://github.com/hsf-training.png",
-      "pullRequests": [
-        {
-          "title": "docs: Mention that root_numpy and root_pandas are deprecated",
-          "repo": "hsf-training/hsf-training-scikit-hep-webpage",
-          "url": "https://github.com/hsf-training/hsf-training-scikit-hep-webpage/pull/95",
-          "mergedAt": "2026-06-23T14:36:25Z"
         }
       ]
     },

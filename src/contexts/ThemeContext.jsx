@@ -2,23 +2,67 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
 
+export const BREATHING_STYLES = [
+  {
+    id: 'hinokami',
+    name: 'Hinokami Kagura',
+    kanji: '日ノ呼吸',
+    form: 'Sun / Flame',
+    color: '#ff2a54',
+    secondary: '#f59e0b'
+  },
+  {
+    id: 'water',
+    name: 'Water Breathing',
+    kanji: '水の呼吸',
+    form: 'Nichirin Cyan',
+    color: '#00f0ff',
+    secondary: '#3b82f6'
+  },
+  {
+    id: 'thunder',
+    name: 'Thunder Breathing',
+    kanji: '雷の呼吸',
+    form: 'Hekireki Issen',
+    color: '#facc15',
+    secondary: '#38bdf8'
+  },
+  {
+    id: 'moon',
+    name: 'Moon & Wisteria',
+    kanji: '月の呼吸',
+    form: 'Wisteria Void',
+    color: '#c084fc',
+    secondary: '#ff2a54'
+  }
+];
+
 export const ThemeProvider = ({ children }) => {
-  // Default to true (dark mode) as requested by the user
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode] = useState(true);
+  const [breathingStyle, setBreathingStyle] = useState('hinokami');
 
   useEffect(() => {
-    // Add or remove the 'dark' class on the HTML element
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
+    document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute('data-breathing', breathingStyle);
+  }, [breathingStyle]);
 
-  const toggleTheme = () => setIsDarkMode(!isDarkMode);
+  const cycleBreathingStyle = () => {
+    const idx = BREATHING_STYLES.findIndex(s => s.id === breathingStyle);
+    const next = BREATHING_STYLES[(idx + 1) % BREATHING_STYLES.length];
+    setBreathingStyle(next.id);
+  };
+
+  const currentStyleObj = BREATHING_STYLES.find(s => s.id === breathingStyle) || BREATHING_STYLES[0];
 
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
+    <ThemeContext.Provider value={{
+      isDarkMode,
+      breathingStyle,
+      setBreathingStyle,
+      cycleBreathingStyle,
+      currentStyleObj,
+      breathingStyles: BREATHING_STYLES
+    }}>
       {children}
     </ThemeContext.Provider>
   );

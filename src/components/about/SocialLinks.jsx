@@ -1,36 +1,49 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
+import { SiSubstack } from 'react-icons/si';
+
+const LINKS = [
+  {
+    name: 'GitHub',
+    href: 'https://github.com/Paramveersingh-S',
+    icon: FaGithub
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/paramveer-singh-454b54270',
+    icon: FaLinkedin
+  },
+  {
+    name: 'Substack',
+    href: 'https://mlblueprints.substack.com/',
+    icon: SiSubstack
+  },
+  {
+    name: 'X (Twitter)',
+    href: 'https://x.com/ParamveerS15896',
+    icon: FaXTwitter
+  }
+];
 
 const SocialLinks = ({ className = '' }) => {
   return (
-    <div className={`flex items-center space-x-6 ${className}`}>
-      <a 
-        href="https://github.com/Paramveersingh-S" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        aria-label="GitHub Profile"
-        className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
-      >
-        <FaGithub className="w-6 h-6 md:w-7 md:h-7" />
-      </a>
-      <a 
-        href="https://www.linkedin.com/in/paramveer-singh-454b54270" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        aria-label="LinkedIn Profile"
-        className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
-      >
-        <FaLinkedin className="w-6 h-6 md:w-7 md:h-7" />
-      </a>
-      <a 
-        href="https://x.com/ParamveerS15896" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        aria-label="X (Twitter) Profile"
-        className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
-      >
-        <FaXTwitter className="w-6 h-6 md:w-7 md:h-7" />
-      </a>
+    <div className={`flex flex-wrap items-center gap-3 ${className}`}>
+      {LINKS.map((item) => {
+        const Icon = item.icon;
+        return (
+          <a
+            key={item.name}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={item.name}
+            className="katana-btn group px-3.5 py-2 rounded-xl bg-[#0a0a12] border border-white/10 hover:border-[var(--accent)] text-gray-300 hover:text-white flex items-center gap-2 text-xs font-mono tracking-wider"
+          >
+            <Icon className="w-4 h-4 text-[var(--accent)] group-hover:scale-110 transition-transform" />
+            <span>{item.name}</span>
+          </a>
+        );
+      })}
     </div>
   );
 };

@@ -1,51 +1,52 @@
 import React from 'react';
-import SectionWrapper from '../components/layout/SectionWrapper';
-import AnimeScene from '../components/hero/AnimeScene';
-import HeroText from '../components/hero/HeroText';
-import AboutMe from '../components/about/AboutMe';
-import TechStackGrid from '../components/about/TechStackGrid';
-import AchievementsGrid from '../components/about/AchievementsGrid';
-import OSSContributions from '../components/about/OSSContributions';
-import ContributionHeatmap from '../components/about/ContributionHeatmap';
-import ResumeViewer from '../components/resume/ResumeViewer';
-import ProjectGrid from '../components/projects/ProjectGrid';
-import ArticleGrid from '../components/articles/ArticleGrid';
 import Nav from '../components/layout/Nav';
 import Footer from '../components/layout/Footer';
+import SectionWrapper from '../components/layout/SectionWrapper';
+import AnimeScene from '../components/hero/AnimeScene';
+import AboutMe from '../components/about/AboutMe';
+import OSSContributions from '../components/about/OSSContributions';
+import ContributionHeatmap from '../components/about/ContributionHeatmap';
+import AchievementsGrid from '../components/about/AchievementsGrid';
+import TechStackGrid from '../components/about/TechStackGrid';
+import ProjectGrid from '../components/projects/ProjectGrid';
+import ArticleGrid from '../components/articles/ArticleGrid';
+import ResumeViewer from '../components/resume/ResumeViewer';
+import KatanaCanvas from '../components/effects/KatanaCanvas';
 
 const Home = () => {
   return (
-    <div className="font-body text-[var(--text-primary)] bg-[var(--bg-primary)] min-h-screen overflow-x-hidden w-full max-w-[100vw]">
+    <div className="min-h-screen flex flex-col bg-[#030305] text-[#f4f4f8] relative selection:bg-[var(--accent)] selection:text-black">
+      {/* Interactive Demon Slayer Embers + Katana Blade Trail + Click Slash Canvas */}
+      <KatanaCanvas />
+
       <Nav />
-      
-      {/* Hero Section */}
-      <section id="home" className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden">
+
+      <main className="flex-grow relative z-10">
         <AnimeScene />
-      </section>
 
-      {/* About Section */}
-      <SectionWrapper id="about" dark={false}>
-        <AboutMe />
-        <TechStackGrid />
-        <AchievementsGrid />
-        <OSSContributions />
-        <ContributionHeatmap />
-      </SectionWrapper>
+        <SectionWrapper id="about" kanjiWatermark="柱の記録">
+          <AboutMe />
+          <AchievementsGrid />
+          <OSSContributions />
+          <ContributionHeatmap />
+        </SectionWrapper>
 
-      {/* Resume Section */}
-      <SectionWrapper id="resume" dark={true} className="bg-[var(--color-black)] text-[var(--text-inverted)]">
-        <ResumeViewer />
-      </SectionWrapper>
+        <SectionWrapper id="tech" kanjiWatermark="日輪刀">
+          <TechStackGrid />
+        </SectionWrapper>
 
-      {/* Projects Section */}
-      <SectionWrapper id="projects" dark={false} className="bg-[var(--color-off-white)]">
-        <ProjectGrid />
-      </SectionWrapper>
+        <SectionWrapper id="projects" kanjiWatermark="血気術">
+          <ProjectGrid />
+        </SectionWrapper>
 
-      {/* Articles Section */}
-      <SectionWrapper id="articles" dark={false}>
-        <ArticleGrid />
-      </SectionWrapper>
+        <SectionWrapper id="writing" kanjiWatermark="技術巻物">
+          <ArticleGrid />
+        </SectionWrapper>
+
+        <SectionWrapper id="resume" kanjiWatermark="履歴書">
+          <ResumeViewer />
+        </SectionWrapper>
+      </main>
 
       <Footer />
     </div>
